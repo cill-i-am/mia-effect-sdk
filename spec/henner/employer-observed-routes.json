@@ -1,0 +1,4861 @@
+{
+  "portal": "Henner employer portal",
+  "portalUrl": "https://hr.henner.com/",
+  "retrievedAtUtc": "2026-11-10",
+  "scope": "Shared public frontend API service only; no authentication or business operation was invoked. UI workflows were inspected separately.",
+  "offsetConvention": "Zero-based JavaScript UTF-16 code-unit offset into exact UTF-8 source identified by SHA-256.",
+  "apiRoot": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+  "observedDefault": {
+    "codeSite": 12,
+    "lang": "fr",
+    "note": "Site selected from hostname; language selected by current translation or local preference. These defaults do not establish tenant entitlement."
+  },
+  "counts": {
+    "sharedJavaScriptFilesParsed": 1,
+    "httpCallSitesDetected": 165,
+    "employerApiCallSites": 147,
+    "distinctNormalizedMethodPathPatterns": 144,
+    "excludedCmsOrTranslationCallSites": 18
+  },
+  "limitations": [
+    "Extracted routes are not an official supported API contract.",
+    "The catalogue does not prove access for any MIA or Henner account.",
+    "Placeholders identify dynamic source expressions; their names/types may be unresolved.",
+    "Request body observations are not full server schemas.",
+    "Response fields and business outcomes require authorized live validation.",
+    "Methods do not determine safety: login, MFA, reissue and other actions can change state.",
+    "This inventory is separate from the implemented LYA SDK."
+  ],
+  "routes": [
+    {
+      "method": "GET",
+      "pathPattern": "/actualites/actualites-externe/recuperer",
+      "callSiteIds": [
+        "employer-call-020"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/beneficiaire-ebia/consultation/recuperer-types-pieces-justificatives",
+      "callSiteIds": [
+        "employer-call-106"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/beneficiaire-ebia/recherche/demander-fichier-declarations-complet",
+      "callSiteIds": [
+        "employer-call-103"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/beneficiaire-ebia/recherche/recuperer-fichiers-declarations-complets",
+      "callSiteIds": [
+        "employer-call-104"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/bilan-sante/demande/initialiser",
+      "callSiteIds": [
+        "employer-call-080"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/bilan-sante/demandes/recuperer/{param1}",
+      "callSiteIds": [
+        "employer-call-079"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/document/consulter/documents/0",
+      "callSiteIds": [
+        "employer-call-047"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/document/consulter/recuperer-document-reporting",
+      "callSiteIds": [
+        "employer-call-081"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/gestion-beneficiaire/extraction/liste-demande-extraction",
+      "callSiteIds": [
+        "employer-call-076"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/mfa/generer",
+      "callSiteIds": [
+        "employer-call-003"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/mfa/valider/{param1}",
+      "callSiteIds": [
+        "employer-call-004"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/referenciel/champs-coordonnees-bancaires/{param1}",
+      "callSiteIds": [
+        "employer-call-041"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/referenciel/devises",
+      "callSiteIds": [
+        "employer-call-022"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/referenciel/langues-certificat",
+      "callSiteIds": [
+        "employer-call-024"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/referenciel/liste-pays",
+      "callSiteIds": [
+        "employer-call-015",
+        "employer-call-018",
+        "employer-call-019"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/referenciel/liste-pays-sepa",
+      "callSiteIds": [
+        "employer-call-021"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/referenciel/motifs-radiation",
+      "callSiteIds": [
+        "employer-call-023"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/referenciel/recuperer-categories-partenaires-reseau-carte-blanche",
+      "callSiteIds": [
+        "employer-call-050"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/referenciel/regimes-sociaux",
+      "callSiteIds": [
+        "employer-call-040"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/reseaux-soins/reseau-henner/criteres-recherche",
+      "callSiteIds": [
+        "employer-call-087"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/reseaux-soins/reseau-henner/nouveaux-partenariats",
+      "callSiteIds": [
+        "employer-call-045"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/reseaux-soins/urls-statiques",
+      "callSiteIds": [
+        "employer-call-042"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/securite/habilitations",
+      "callSiteIds": [
+        "employer-call-030"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/securite/logout",
+      "callSiteIds": [
+        "employer-call-089"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/securite/sso-externe/login/{param1}",
+      "callSiteIds": [
+        "employer-call-002"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/securite/sso-saml/login-url/{param1}",
+      "callSiteIds": [
+        "employer-call-001"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/utilisateur/civilites",
+      "callSiteIds": [
+        "employer-call-029"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/utilisateur/contacts-ug",
+      "callSiteIds": [
+        "employer-call-032"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/utilisateur/contrats",
+      "callSiteIds": [
+        "employer-call-077"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/utilisateur/indicateurs",
+      "callSiteIds": [
+        "employer-call-031"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/utilisateur/langues",
+      "callSiteIds": [
+        "employer-call-028"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/utilisateur/recuperer",
+      "callSiteIds": [
+        "employer-call-025"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/utilisateur/recuperer-messages",
+      "callSiteIds": [
+        "employer-call-026"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/utilisateur/web-call-back/info-pays-instant-ring/{param1}",
+      "callSiteIds": [
+        "employer-call-017"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/utilisateur/web-call-back/liste-pays",
+      "callSiteIds": [
+        "employer-call-016"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/utils/configuration/get-ws-env",
+      "callSiteIds": [
+        "employer-call-043"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/utils/configuration/set-ws-env/{param1}",
+      "callSiteIds": [
+        "employer-call-044"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/appel-cotisation/consultation/cotisation",
+      "callSiteIds": [
+        "employer-call-057"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/appel-cotisation/consultation/details-contributions",
+      "callSiteIds": [
+        "employer-call-064"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/appel-cotisation/consultation/facture",
+      "callSiteIds": [
+        "employer-call-063"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/appel-cotisation/consultation/valider-prelevement-unitaire",
+      "callSiteIds": [
+        "employer-call-061"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/appel-cotisation/declaration/declarer-produits",
+      "callSiteIds": [
+        "employer-call-060"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/appel-cotisation/declaration/recuperer-produits",
+      "callSiteIds": [
+        "employer-call-059"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/appel-cotisation/declaration/traiter-piece-jointe",
+      "callSiteIds": [
+        "employer-call-058"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/beneficiaire-ebia/consultation/ajouter-piece-justificative-dans-affiliation",
+      "callSiteIds": [
+        "employer-call-107"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/beneficiaire-ebia/consultation/envoyer-relance",
+      "callSiteIds": [
+        "employer-call-098"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/beneficiaire-ebia/consultation/recuperer-affiliation",
+      "callSiteIds": [
+        "employer-call-051"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/beneficiaire-ebia/consultation/recuperer-piece-justificative",
+      "callSiteIds": [
+        "employer-call-108"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/beneficiaire-ebia/consultation/refuser-ayant-droit",
+      "callSiteIds": [
+        "employer-call-102"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/beneficiaire-ebia/consultation/signaler-absence-ou-invalidite-piece-justificative",
+      "callSiteIds": [
+        "employer-call-101"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/beneficiaire-ebia/consultation/supprimer-affiliation",
+      "callSiteIds": [
+        "employer-call-097"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/beneficiaire-ebia/consultation/valider-affiliations",
+      "callSiteIds": [
+        "employer-call-099",
+        "employer-call-105"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/beneficiaire-ebia/declaration/declarer-unitaire",
+      "callSiteIds": [
+        "employer-call-092"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/beneficiaire-ebia/declaration/enregistrer-demande-declarations-en-masse",
+      "callSiteIds": [
+        "employer-call-094"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/beneficiaire-ebia/declaration/modifier-declaration",
+      "callSiteIds": [
+        "employer-call-100"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/beneficiaire-ebia/declaration/recuperer-comptes-rendus-import-en-masse",
+      "callSiteIds": [
+        "employer-call-095"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/beneficiaire-ebia/declaration/recuperer-donnees-contrat",
+      "callSiteIds": [
+        "employer-call-090"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/beneficiaire-ebia/declaration/recuperer-fichier-compte-rendu-import-en-masse",
+      "callSiteIds": [
+        "employer-call-096"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/beneficiaire-ebia/declaration/recuperer-structure-fichier-declaration-en-masse",
+      "callSiteIds": [
+        "employer-call-093"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/beneficiaire-ebia/recherche/rechercher-salaries",
+      "callSiteIds": [
+        "employer-call-070"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/beneficiaire-ebia/recherche/recuperer-fichier-ged",
+      "callSiteIds": [
+        "employer-call-074"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/bilan-sante/demande/annuler",
+      "callSiteIds": [
+        "employer-call-086"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/bilan-sante/demande/enregistrer",
+      "callSiteIds": [
+        "employer-call-085"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/bilan-sante/demande/recuperer",
+      "callSiteIds": [
+        "employer-call-084"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/bilan-sante/demandes/chercher",
+      "callSiteIds": [
+        "employer-call-083"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/decompte/recherche/chercher-decomptes-beneficiaire",
+      "callSiteIds": [
+        "employer-call-012"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/decompte/recherche/chercher-decomptes-contrats",
+      "callSiteIds": [
+        "employer-call-010"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/decompte/recherche/criteres-beneficiaire",
+      "callSiteIds": [
+        "employer-call-011"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/decompte/recherche/exporter-decomptes-contrats",
+      "callSiteIds": [
+        "employer-call-013"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/document/consulter/document",
+      "callSiteIds": [
+        "employer-call-048"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/document/consulter/document-reporting",
+      "callSiteIds": [
+        "employer-call-082"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/dsn/mouvement/historique",
+      "callSiteIds": [
+        "employer-call-069"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/dsn/parametrage/consulter-fiche",
+      "callSiteIds": [
+        "employer-call-056"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/dsn/parametrage/reemettre-fiche",
+      "callSiteIds": [
+        "employer-call-068"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/dsn/parametrage/telecharger-fiche",
+      "callSiteIds": [
+        "employer-call-062"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/fonctionnalite-beneficiaire/consultation/recuperer-coordonnees-postales",
+      "callSiteIds": [
+        "employer-call-009"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/fonctionnalite-beneficiaire/demande/commander-carte-tp",
+      "callSiteIds": [
+        "employer-call-014"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/fonctionnalite-beneficiaire/demande/envoyer-prise-en-charge-hospitaliere",
+      "callSiteIds": [
+        "employer-call-146"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/gestion-beneficiaire/affiliation/abandonner-saisie-beneficiaire",
+      "callSiteIds": [
+        "employer-call-039"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/gestion-beneficiaire/affiliation/enregistrer-affiliation",
+      "callSiteIds": [
+        "employer-call-038"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/gestion-beneficiaire/affiliation/enregistrer-beneficiaire",
+      "callSiteIds": [
+        "employer-call-037"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/gestion-beneficiaire/affiliation/liste-beneficiaires",
+      "callSiteIds": [
+        "employer-call-036"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/gestion-beneficiaire/affiliation/radier",
+      "callSiteIds": [
+        "employer-call-008"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/gestion-beneficiaire/affiliation/recuperer-beneficiaire",
+      "callSiteIds": [
+        "employer-call-035"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/gestion-beneficiaire/consultation/historique-mouvements-rh",
+      "callSiteIds": [
+        "employer-call-055"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/gestion-beneficiaire/consultation/informations-renforts-individuels",
+      "callSiteIds": [
+        "employer-call-034"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/gestion-beneficiaire/consultation/recuperer-salaries",
+      "callSiteIds": [
+        "employer-call-071"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/gestion-beneficiaire/consultation/telecharger-certificat",
+      "callSiteIds": [
+        "employer-call-073"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/gestion-beneficiaire/consultation/telecharger-salaries",
+      "callSiteIds": [
+        "employer-call-072"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/gestion-beneficiaire/consultation/verifier-matricules",
+      "callSiteIds": [
+        "employer-call-091"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/gestion-beneficiaire/extraction/recuperer-fichier-ged",
+      "callSiteIds": [
+        "employer-call-075"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/gestion-beneficiaire/recherche/consulter-salaries-et-produits",
+      "callSiteIds": [
+        "employer-call-049"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/gestion-beneficiaire/recherche/rechercher-salaries",
+      "callSiteIds": [
+        "employer-call-053"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/gestion-cookies/enregistrer-consentement",
+      "callSiteIds": [
+        "employer-call-147"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/informations-annuelles/recuperer-document",
+      "callSiteIds": [
+        "employer-call-078"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/reseaux-soins/rechercher-partenaires-carte-blanche",
+      "callSiteIds": [
+        "employer-call-052"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/reseaux-soins/reseau-henner/chercher-partenaires",
+      "callSiteIds": [
+        "employer-call-088"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/reseaux-soins/reseau-henner/contact",
+      "callSiteIds": [
+        "employer-call-065"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/reseaux-soins/url-santeclair",
+      "callSiteIds": [
+        "employer-call-046"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/securite/login",
+      "callSiteIds": [
+        "employer-call-005"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/securite/regenerer-mot-de-passe",
+      "callSiteIds": [
+        "employer-call-006"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/consultation-dossier/ajouter-pieces-justificatives",
+      "callSiteIds": [
+        "employer-call-122"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/consultation-dossier/enregistrer-date-cloture",
+      "callSiteIds": [
+        "employer-call-112"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/consultation-dossier/enregistrer-date-sortie-effectif",
+      "callSiteIds": [
+        "employer-call-113"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/consultation-dossier/enregistrer-salaires-partiels-therapeutique",
+      "callSiteIds": [
+        "employer-call-121"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/consultation-dossier/recherche-motif-sortie-effectif",
+      "callSiteIds": [
+        "employer-call-125"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/consultation-dossier/recherche-sinistre",
+      "callSiteIds": [
+        "employer-call-109"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/consultation-dossier/recuperer-piece-justificative",
+      "callSiteIds": [
+        "employer-call-123"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/consultation-ijss/rechercher",
+      "callSiteIds": [
+        "employer-call-144"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/consultation-ijss/rechercher-information",
+      "callSiteIds": [
+        "employer-call-145"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/declaration/arret-travail",
+      "callSiteIds": [
+        "employer-call-134"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/declaration/consulter-sinistre-incapacite",
+      "callSiteIds": [
+        "employer-call-131"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/declaration/consulter-sinistre-invalidite",
+      "callSiteIds": [
+        "employer-call-132"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/declaration/controler-validite-sinistre-incapacite",
+      "callSiteIds": [
+        "employer-call-133"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/declaration/controler-validite-sinistre-invalidite",
+      "callSiteIds": [
+        "employer-call-139"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/declaration/invalidite",
+      "callSiteIds": [
+        "employer-call-140"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/declaration/refuser",
+      "callSiteIds": [
+        "employer-call-136"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/declaration/supprimer",
+      "callSiteIds": [
+        "employer-call-135"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/extraction-prevoyance/editer-extraction-prevoyance",
+      "callSiteIds": [
+        "employer-call-141"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/extraction-prevoyance/rechercher-demandes-travaux-non-emises",
+      "callSiteIds": [
+        "employer-call-143"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/extraction-prevoyance/recuperer-historique-extractions",
+      "callSiteIds": [
+        "employer-call-142"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/recherche/controler-declaration-incapacite",
+      "callSiteIds": [
+        "employer-call-130"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/recherche/controler-garantie-incapacite-active",
+      "callSiteIds": [
+        "employer-call-124"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/recherche/controler-garantie-invalidite-active",
+      "callSiteIds": [
+        "employer-call-138"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/recherche/enregistrer-action-sinistre",
+      "callSiteIds": [
+        "employer-call-120"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/recherche/information-dossier",
+      "callSiteIds": [
+        "employer-call-110"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/recherche/initialiser-dossier",
+      "callSiteIds": [
+        "employer-call-115"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/recherche/initialiser-sinistre-incapacite",
+      "callSiteIds": [
+        "employer-call-128"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/recherche/initialiser-sinistre-invalidite",
+      "callSiteIds": [
+        "employer-call-137"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/recherche/liste-categorie-professionnel",
+      "callSiteIds": [
+        "employer-call-126"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/recherche/liste-date-cloture",
+      "callSiteIds": [
+        "employer-call-111"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/recherche/liste-type-piece-justificative",
+      "callSiteIds": [
+        "employer-call-114"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/recherche/modifier-action-sinistre",
+      "callSiteIds": [
+        "employer-call-119"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/recherche/rechercher-action-sinistre",
+      "callSiteIds": [
+        "employer-call-117"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/recherche/rechercher-assure",
+      "callSiteIds": [
+        "employer-call-127"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/recherche/rechercher-entreprise",
+      "callSiteIds": [
+        "employer-call-129"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/recherche/rechercher-liste-action",
+      "callSiteIds": [
+        "employer-call-116"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/sinistre/recherche/supprimer-action-sinistre",
+      "callSiteIds": [
+        "employer-call-118"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/utilisateur/contacter-ug",
+      "callSiteIds": [
+        "employer-call-066"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/utilisateur/contrat",
+      "callSiteIds": [
+        "employer-call-033"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/utilisateur/modifier-donnees-correspondant",
+      "callSiteIds": [
+        "employer-call-007"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/utilisateur/recuperer-attachment",
+      "callSiteIds": [
+        "employer-call-027"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/utilisateur/resilier-contrat",
+      "callSiteIds": [
+        "employer-call-054"
+      ]
+    },
+    {
+      "method": "POST",
+      "pathPattern": "/utilisateur/web-call-back/demander-rappel",
+      "callSiteIds": [
+        "employer-call-067"
+      ]
+    }
+  ],
+  "callSites": [
+    {
+      "id": "employer-call-001",
+      "owner": "ssosamlLogin",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1196411,
+        "endOffsetUtf16": 1196505
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/securite/sso-saml/login-url/{param1}",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only",
+      "unresolvedPathParameterExpressions": {
+        "e": "param1"
+      }
+    },
+    {
+      "id": "employer-call-002",
+      "owner": "ssooavLogin",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1196565,
+        "endOffsetUtf16": 1196658
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/securite/sso-externe/login/{param1}",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only",
+      "unresolvedPathParameterExpressions": {
+        "e": "param1"
+      }
+    },
+    {
+      "id": "employer-call-003",
+      "owner": "mfaGenerer",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1196716,
+        "endOffsetUtf16": 1196806
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/mfa/generer",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-004",
+      "owner": "mfaValider",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1196865,
+        "endOffsetUtf16": 1196960
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/mfa/valider/{param1}",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only",
+      "unresolvedPathParameterExpressions": {
+        "e": "param1"
+      }
+    },
+    {
+      "id": "employer-call-005",
+      "owner": "authentifier",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1197021,
+        "endOffsetUtf16": 1197109
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/securite/login",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-006",
+      "owner": "regenereMotDePasse",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1197204,
+        "endOffsetUtf16": 1197306
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "{identifiant:e}",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/securite/regenerer-mot-de-passe",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-007",
+      "owner": "modifierCorrespendant",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1197404,
+        "endOffsetUtf16": 1197508
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/utilisateur/modifier-donnees-correspondant",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-008",
+      "owner": "TerminatedBeneficary",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1197605,
+        "endOffsetUtf16": 1197708
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/gestion-beneficiaire/affiliation/radier",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-009",
+      "owner": "getBenefAddress",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1197800,
+        "endOffsetUtf16": 1197898
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/fonctionnalite-beneficiaire/consultation/recuperer-coordonnees-postales",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-010",
+      "owner": "decomptesContrat",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1197991,
+        "endOffsetUtf16": 1198090
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/decompte/recherche/chercher-decomptes-contrats",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-011",
+      "owner": "decomptesCriteria",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1198184,
+        "endOffsetUtf16": 1198284
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/decompte/recherche/criteres-beneficiaire",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-012",
+      "owner": "decomptesBenef",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1198375,
+        "endOffsetUtf16": 1198472
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/decompte/recherche/chercher-decomptes-beneficiaire",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-013",
+      "owner": "decomptesContratExport",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1198571,
+        "endOffsetUtf16": 1198676
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/decompte/recherche/exporter-decomptes-contrats",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-014",
+      "owner": "getNewCard",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1198763,
+        "endOffsetUtf16": 1198856
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/fonctionnalite-beneficiaire/demande/commander-carte-tp",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-015",
+      "owner": "getCountries",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1198915,
+        "endOffsetUtf16": 1198998
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/referenciel/liste-pays",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-016",
+      "owner": "getCountriesContact",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1199106,
+        "endOffsetUtf16": 1199196
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/utilisateur/web-call-back/liste-pays",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-017",
+      "owner": "getContactInfo",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1199308,
+        "endOffsetUtf16": 1199398
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/utilisateur/web-call-back/info-pays-instant-ring/{param1}",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only",
+      "unresolvedPathParameterExpressions": {
+        "e": "param1"
+      }
+    },
+    {
+      "id": "employer-call-018",
+      "owner": "getCountriesOfac",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1199458,
+        "endOffsetUtf16": 1199541
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/referenciel/liste-pays",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-019",
+      "owner": "getCountriesUnderEmbargo",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1199705,
+        "endOffsetUtf16": 1199788
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/referenciel/liste-pays",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-020",
+      "owner": "getNews",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1199965,
+        "endOffsetUtf16": 1200043
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/actualites/actualites-externe/recuperer",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-021",
+      "owner": "getSepaCountries",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1200143,
+        "endOffsetUtf16": 1200233
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/referenciel/liste-pays-sepa",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-022",
+      "owner": "getDevises",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1200336,
+        "endOffsetUtf16": 1200417
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/referenciel/devises",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-023",
+      "owner": "getTerminatedReason",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1200523,
+        "endOffsetUtf16": 1200613
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/referenciel/motifs-radiation",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-024",
+      "owner": "getLangCertificat",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1200726,
+        "endOffsetUtf16": 1200813
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/referenciel/langues-certificat",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-025",
+      "owner": "getInfosUser",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1200920,
+        "endOffsetUtf16": 1201006
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/utilisateur/recuperer",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-026",
+      "owner": "getUserMessages",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1201066,
+        "endOffsetUtf16": 1201155
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/utilisateur/recuperer-messages",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-027",
+      "owner": "getUserMessageFile",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1201219,
+        "endOffsetUtf16": 1201320
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/utilisateur/recuperer-attachment",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-028",
+      "owner": "getListLang",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1201375,
+        "endOffsetUtf16": 1201459
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/utilisateur/langues",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-029",
+      "owner": "getListCivility",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1201562,
+        "endOffsetUtf16": 1201648
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/utilisateur/civilites",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-030",
+      "owner": "recupererMenu",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1201753,
+        "endOffsetUtf16": 1201840
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/securite/habilitations",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-031",
+      "owner": "recupererIndicateurs",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1201953,
+        "endOffsetUtf16": 1202038
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/utilisateur/indicateurs",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-032",
+      "owner": "recupererUniteGestion",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1202156,
+        "endOffsetUtf16": 1202242
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/utilisateur/contacts-ug",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-033",
+      "owner": "getContractInfos",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1202358,
+        "endOffsetUtf16": 1202457
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/utilisateur/contrat",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-034",
+      "owner": "getIndividualInformations",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1202528,
+        "endOffsetUtf16": 1202636
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/gestion-beneficiaire/consultation/informations-renforts-individuels",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-035",
+      "owner": "getBenefInfos",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1202697,
+        "endOffsetUtf16": 1202793
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/gestion-beneficiaire/affiliation/recuperer-beneficiaire",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-036",
+      "owner": "getBenefList",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1202853,
+        "endOffsetUtf16": 1202948
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/gestion-beneficiaire/affiliation/liste-beneficiaires",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-037",
+      "owner": "addBenef",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1203007,
+        "endOffsetUtf16": 1203098
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/gestion-beneficiaire/affiliation/enregistrer-beneficiaire",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-038",
+      "owner": "saveAffiliation",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1203161,
+        "endOffsetUtf16": 1203259
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/gestion-beneficiaire/affiliation/enregistrer-affiliation",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-039",
+      "owner": "cancelAdd",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1203349,
+        "endOffsetUtf16": 1203441
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/gestion-beneficiaire/affiliation/abandonner-saisie-beneficiaire",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-040",
+      "owner": "getRegimeInfos",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1203500,
+        "endOffsetUtf16": 1203588
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/referenciel/regimes-sociaux",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-041",
+      "owner": "getBankDetails",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1203648,
+        "endOffsetUtf16": 1203741
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/referenciel/champs-coordonnees-bancaires/{param1}",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only",
+      "unresolvedPathParameterExpressions": {
+        "e": "param1"
+      }
+    },
+    {
+      "id": "employer-call-042",
+      "owner": "getReseauxURLs",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1203800,
+        "endOffsetUtf16": 1203885
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/reseaux-soins/urls-statiques",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-043",
+      "owner": "getCSharpEnv",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1203942,
+        "endOffsetUtf16": 1204025
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/utils/configuration/get-ws-env",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-044",
+      "owner": "changeCSharpEnv",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1204086,
+        "endOffsetUtf16": 1204180
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/utils/configuration/set-ws-env/{param1}",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only",
+      "unresolvedPathParameterExpressions": {
+        "e": "param1"
+      }
+    },
+    {
+      "id": "employer-call-045",
+      "owner": "getResmedPartners",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1204242,
+        "endOffsetUtf16": 1204330
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/reseaux-soins/reseau-henner/nouveaux-partenariats",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-046",
+      "owner": "getReseauxSanteclair",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1204396,
+        "endOffsetUtf16": 1204496
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/reseaux-soins/url-santeclair",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-047",
+      "owner": "getDocuments",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1204553,
+        "endOffsetUtf16": 1204639
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/document/consulter/documents/0",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-048",
+      "owner": "downloadDocument",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1204701,
+        "endOffsetUtf16": 1204800
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/document/consulter/document",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-049",
+      "owner": "getInfoSalarie",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1204860,
+        "endOffsetUtf16": 1204970
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/gestion-beneficiaire/recherche/consulter-salaries-et-produits",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-050",
+      "owner": "getNetworkCategoryCb",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1205035,
+        "endOffsetUtf16": 1205139
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/referenciel/recuperer-categories-partenaires-reseau-carte-blanche",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-051",
+      "owner": "getDetailsBeneficiarieEbia",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1205211,
+        "endOffsetUtf16": 1205316
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/consultation/recuperer-affiliation",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-052",
+      "owner": "carteBlancheSearchPartners",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1205388,
+        "endOffsetUtf16": 1205497
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/reseaux-soins/rechercher-partenaires-carte-blanche",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-053",
+      "owner": "searchSalaries",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1205560,
+        "endOffsetUtf16": 1205657
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/gestion-beneficiaire/recherche/rechercher-salaries",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-054",
+      "owner": "terminateContract",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1205723,
+        "endOffsetUtf16": 1205823
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/utilisateur/resilier-contrat",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-055",
+      "owner": "searchMovements",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1205887,
+        "endOffsetUtf16": 1205989
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/gestion-beneficiaire/consultation/historique-mouvements-rh",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-056",
+      "owner": "getDSNDetail",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1206047,
+        "endOffsetUtf16": 1206139
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/dsn/parametrage/consulter-fiche",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-057",
+      "owner": "getCotisations",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1206199,
+        "endOffsetUtf16": 1206298
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/appel-cotisation/consultation/cotisation",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-058",
+      "owner": "cotisationAttachement",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1206365,
+        "endOffsetUtf16": 1206469
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/appel-cotisation/declaration/traiter-piece-jointe",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-059",
+      "owner": "getCotisationProduits",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1206536,
+        "endOffsetUtf16": 1206643
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/appel-cotisation/declaration/recuperer-produits",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-060",
+      "owner": "saveCotisationProducts",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1206711,
+        "endOffsetUtf16": 1206816
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/appel-cotisation/declaration/declarer-produits",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-061",
+      "owner": "validCotisation",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1206877,
+        "endOffsetUtf16": 1206975
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/appel-cotisation/consultation/valider-prelevement-unitaire",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-062",
+      "owner": "downloadDSNFiche",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1207037,
+        "endOffsetUtf16": 1207131
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/dsn/parametrage/telecharger-fiche",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-063",
+      "owner": "downloadFacture",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1207192,
+        "endOffsetUtf16": 1207290
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/appel-cotisation/consultation/facture",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-064",
+      "owner": "downloadContributions",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1207357,
+        "endOffsetUtf16": 1207461
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/appel-cotisation/consultation/details-contributions",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-065",
+      "owner": "contactResmed",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1207520,
+        "endOffsetUtf16": 1207616
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/reseaux-soins/reseau-henner/contact",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-066",
+      "owner": "contactMyRequests",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1207679,
+        "endOffsetUtf16": 1207779
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/utilisateur/contacter-ug",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-067",
+      "owner": "contactWebcallback",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1207843,
+        "endOffsetUtf16": 1207944
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/utilisateur/web-call-back/demander-rappel",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-068",
+      "owner": "reemitDSNFiche",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1208004,
+        "endOffsetUtf16": 1208096
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/dsn/parametrage/reemettre-fiche",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-069",
+      "owner": "searchDSNMovements",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1208163,
+        "endOffsetUtf16": 1208264
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/dsn/mouvement/historique",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-070",
+      "owner": "searchEbiaInscriptions",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1208332,
+        "endOffsetUtf16": 1208437
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/recherche/rechercher-salaries",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-071",
+      "owner": "searchSalariesContract",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1208505,
+        "endOffsetUtf16": 1208610
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/gestion-beneficiaire/consultation/recuperer-salaries",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-072",
+      "owner": "downloadSearchSalariesContract",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1208686,
+        "endOffsetUtf16": 1208799
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/gestion-beneficiaire/consultation/telecharger-salaries",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-073",
+      "owner": "downloadCertficate",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1208863,
+        "endOffsetUtf16": 1208964
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/gestion-beneficiaire/consultation/telecharger-certificat",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-074",
+      "owner": "downloadExtractEBIA",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1209029,
+        "endOffsetUtf16": 1209131
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/recherche/recuperer-fichier-ged",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-075",
+      "owner": "downloadExtractResultsSalaries",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1209207,
+        "endOffsetUtf16": 1209320
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/gestion-beneficiaire/extraction/recuperer-fichier-ged",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-076",
+      "owner": "getExtractHistory",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1209532,
+        "endOffsetUtf16": 1209570
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/gestion-beneficiaire/extraction/liste-demande-extraction",
+      "pathResolution": "single observed switch branch: consult-salarie",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-077",
+      "owner": "getContracts",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1209627,
+        "endOffsetUtf16": 1209710
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/utilisateur/contrats",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-078",
+      "owner": "getInfosAnnuelles",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1209773,
+        "endOffsetUtf16": 1209873
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/informations-annuelles/recuperer-document",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-079",
+      "owner": "getBilanSante",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1209935,
+        "endOffsetUtf16": 1210026
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/bilan-sante/demandes/recuperer/{param1}",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only",
+      "unresolvedPathParameterExpressions": {
+        "e": "param1"
+      }
+    },
+    {
+      "id": "employer-call-080",
+      "owner": "getBilanSanteInit",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1210088,
+        "endOffsetUtf16": 1210179
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/bilan-sante/demande/initialiser",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-081",
+      "owner": "getDataPortal",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1210236,
+        "endOffsetUtf16": 1210320
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/document/consulter/recuperer-document-reporting",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-082",
+      "owner": "consultDataPortalDoc",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1210432,
+        "endOffsetUtf16": 1210553
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "{source:\"hennerDoc\",id:e}",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/document/consulter/document-reporting",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-083",
+      "owner": "searchBilanSante",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1210615,
+        "endOffsetUtf16": 1210714
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/bilan-sante/demandes/chercher",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-084",
+      "owner": "getBilanSanteDetail",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1210779,
+        "endOffsetUtf16": 1210881
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/bilan-sante/demande/recuperer",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-085",
+      "owner": "saveBilanSante",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1210941,
+        "endOffsetUtf16": 1211038
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/bilan-sante/demande/enregistrer",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-086",
+      "owner": "cancelBilan",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1211095,
+        "endOffsetUtf16": 1211189
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/bilan-sante/demande/annuler",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-087",
+      "owner": "getResmedSearch",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1211249,
+        "endOffsetUtf16": 1211335
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/reseaux-soins/reseau-henner/criteres-recherche",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-088",
+      "owner": "searchResmed",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1211393,
+        "endOffsetUtf16": 1211488
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/reseaux-soins/reseau-henner/chercher-partenaires",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-089",
+      "owner": "deconnecter",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1211545,
+        "endOffsetUtf16": 1211625
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/securite/logout",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-090",
+      "owner": "ebiaRetrieveContractData",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1211854,
+        "endOffsetUtf16": 1211961
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/declaration/recuperer-donnees-contrat",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-091",
+      "owner": "ebiaRegistrationNumberVerify",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1212038,
+        "endOffsetUtf16": 1212149
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/gestion-beneficiaire/consultation/verifier-matricules",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-092",
+      "owner": "ebiaUnitaryDeclare",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1212213,
+        "endOffsetUtf16": 1212314
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/declaration/declarer-unitaire",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-093",
+      "owner": "ebiaInMassGetFile",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1212380,
+        "endOffsetUtf16": 1212480
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/declaration/recuperer-structure-fichier-declaration-en-masse",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-094",
+      "owner": "ebiaInMassSendRequest",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1212547,
+        "endOffsetUtf16": 1212651
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/declaration/enregistrer-demande-declarations-en-masse",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-095",
+      "owner": "ebiaInMassGetImportFiles",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1212724,
+        "endOffsetUtf16": 1212831
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/declaration/recuperer-comptes-rendus-import-en-masse",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-096",
+      "owner": "ebiaInMassGetSpecificFile",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1212902,
+        "endOffsetUtf16": 1213010
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/declaration/recuperer-fichier-compte-rendu-import-en-masse",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-097",
+      "owner": "ebiaRemoveMembership",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1213076,
+        "endOffsetUtf16": 1213179
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/consultation/supprimer-affiliation",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-098",
+      "owner": "ebiaResendMembership",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1213245,
+        "endOffsetUtf16": 1213348
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/consultation/envoyer-relance",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-099",
+      "owner": "ebiaValidateMembership",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1213416,
+        "endOffsetUtf16": 1213521
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/consultation/valider-affiliations",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-100",
+      "owner": "ebiaEditMembership",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1213585,
+        "endOffsetUtf16": 1213686
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/declaration/modifier-declaration",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-101",
+      "owner": "ebiaReportMissingDocument",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1213757,
+        "endOffsetUtf16": 1213865
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/consultation/signaler-absence-ou-invalidite-piece-justificative",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-102",
+      "owner": "ebiaRjectBeneficiary",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1213931,
+        "endOffsetUtf16": 1214034
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/consultation/refuser-ayant-droit",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-103",
+      "owner": "ebiaRequestCompleteDeclarationsFile",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1214114,
+        "endOffsetUtf16": 1214223
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/recherche/demander-fichier-declarations-complet",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-104",
+      "owner": "ebiaRecoverCompleteDeclarationFiles",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1214303,
+        "endOffsetUtf16": 1214412
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/recherche/recuperer-fichiers-declarations-complets",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-105",
+      "owner": "ebiaValidateAffiliations",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1214715,
+        "endOffsetUtf16": 1214822
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/consultation/valider-affiliations",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-106",
+      "owner": "beneficiaireEbiaTypeDoc",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1214890,
+        "endOffsetUtf16": 1214987
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/consultation/recuperer-types-pieces-justificatives",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-107",
+      "owner": "beneficiaireEbiaAddDoc",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1215055,
+        "endOffsetUtf16": 1215160
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/consultation/ajouter-piece-justificative-dans-affiliation",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-108",
+      "owner": "beneficiaireEbiaGetDoc",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1215228,
+        "endOffsetUtf16": 1215333
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/beneficiaire-ebia/consultation/recuperer-piece-justificative",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-109",
+      "owner": "sinisterSearch",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1215393,
+        "endOffsetUtf16": 1215490
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/consultation-dossier/recherche-sinistre",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-110",
+      "owner": "sinisterGetDetail",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1215563,
+        "endOffsetUtf16": 1215663
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/recherche/information-dossier",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-111",
+      "owner": "sinisterListeCauseClosing",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1215734,
+        "endOffsetUtf16": 1215842
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/recherche/liste-date-cloture",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-112",
+      "owner": "sinisterSetClosingDate",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1215910,
+        "endOffsetUtf16": 1216015
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/consultation-dossier/enregistrer-date-cloture",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-113",
+      "owner": "sinisterSetExitDate",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1216080,
+        "endOffsetUtf16": 1216182
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/consultation-dossier/enregistrer-date-sortie-effectif",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-114",
+      "owner": "sinisterListeFilesType",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1216250,
+        "endOffsetUtf16": 1216355
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/recherche/liste-type-piece-justificative",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-115",
+      "owner": "sinisterInitializeFolder",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1216425,
+        "endOffsetUtf16": 1216532
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/recherche/initialiser-dossier",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-116",
+      "owner": "rechercherListAction",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1216598,
+        "endOffsetUtf16": 1216701
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/recherche/rechercher-liste-action",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-117",
+      "owner": "sinisterSearchActions",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1216768,
+        "endOffsetUtf16": 1216872
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/recherche/rechercher-action-sinistre",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-118",
+      "owner": "sinisterDeleteActions",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1216939,
+        "endOffsetUtf16": 1217043
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/recherche/supprimer-action-sinistre",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-119",
+      "owner": "sinisterUpdateActions",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1217110,
+        "endOffsetUtf16": 1217214
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/recherche/modifier-action-sinistre",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-120",
+      "owner": "sinisterSaveAction",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1217278,
+        "endOffsetUtf16": 1217379
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/recherche/enregistrer-action-sinistre",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-121",
+      "owner": "sinsiterRecordPartialSalariesTherapeutic",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1217465,
+        "endOffsetUtf16": 1217588
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/consultation-dossier/enregistrer-salaires-partiels-therapeutique",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-122",
+      "owner": "sinisterAddFiles",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1217650,
+        "endOffsetUtf16": 1217780
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/consultation-dossier/ajouter-pieces-justificatives",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only",
+      "fullHttpResponse": true,
+      "responseObservation": "Angular HttpResponse; parsed JSON payload is under body"
+    },
+    {
+      "id": "employer-call-123",
+      "owner": "sinisterGetFile",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1217841,
+        "endOffsetUtf16": 1217939
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/consultation-dossier/recuperer-piece-justificative",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-124",
+      "owner": "controlerGarantie",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1218002,
+        "endOffsetUtf16": 1218102
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/recherche/controler-garantie-incapacite-active",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-125",
+      "owner": "sinisterListCauseExiting",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1218175,
+        "endOffsetUtf16": 1218282
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/consultation-dossier/recherche-motif-sortie-effectif",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-126",
+      "owner": "sinisterCategoryProList",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1218351,
+        "endOffsetUtf16": 1218457
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/recherche/liste-categorie-professionnel",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-127",
+      "owner": "sinisterLookingForInsured",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1218528,
+        "endOffsetUtf16": 1218636
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/recherche/rechercher-assure",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-128",
+      "owner": "sinisterInitIncapacity",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1218704,
+        "endOffsetUtf16": 1218809
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/recherche/initialiser-sinistre-incapacite",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-129",
+      "owner": "sinisterSearchCompany",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1218876,
+        "endOffsetUtf16": 1218980
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/recherche/rechercher-entreprise",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-130",
+      "owner": "sinisterControlDeclarationIncapacity",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1219062,
+        "endOffsetUtf16": 1219212
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/recherche/controler-declaration-incapacite",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only",
+      "fullHttpResponse": true,
+      "responseObservation": "Angular HttpResponse; parsed JSON payload is under body"
+    },
+    {
+      "id": "employer-call-131",
+      "owner": "sinisterConsultIncapacity",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1219283,
+        "endOffsetUtf16": 1219421
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/declaration/consulter-sinistre-incapacite",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only",
+      "fullHttpResponse": true,
+      "responseObservation": "Angular HttpResponse; parsed JSON payload is under body"
+    },
+    {
+      "id": "employer-call-132",
+      "owner": "sinisterConsultInvalidity",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1219492,
+        "endOffsetUtf16": 1219630
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/declaration/consulter-sinistre-invalidite",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only",
+      "fullHttpResponse": true,
+      "responseObservation": "Angular HttpResponse; parsed JSON payload is under body"
+    },
+    {
+      "id": "employer-call-133",
+      "owner": "sinisterControlValidityIncapacity",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1219709,
+        "endOffsetUtf16": 1219856
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/declaration/controler-validite-sinistre-incapacite",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only",
+      "fullHttpResponse": true,
+      "responseObservation": "Angular HttpResponse; parsed JSON payload is under body"
+    },
+    {
+      "id": "employer-call-134",
+      "owner": "sinisterDeclareWorkStoppage",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1219929,
+        "endOffsetUtf16": 1220070
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/declaration/arret-travail",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only",
+      "fullHttpResponse": true,
+      "responseObservation": "Angular HttpResponse; parsed JSON payload is under body"
+    },
+    {
+      "id": "employer-call-135",
+      "owner": "sinisterDeleteeWorkStoppage",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1220147,
+        "endOffsetUtf16": 1220287
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/declaration/supprimer",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only",
+      "fullHttpResponse": true,
+      "responseObservation": "Angular HttpResponse; parsed JSON payload is under body"
+    },
+    {
+      "id": "employer-call-136",
+      "owner": "sinisterRefuseWorkStoppage",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1220359,
+        "endOffsetUtf16": 1220499
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/declaration/refuser",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only",
+      "fullHttpResponse": true,
+      "responseObservation": "Angular HttpResponse; parsed JSON payload is under body"
+    },
+    {
+      "id": "employer-call-137",
+      "owner": "sinisterInitInvalidity",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1220567,
+        "endOffsetUtf16": 1220678
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/recherche/initialiser-sinistre-invalidite",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-138",
+      "owner": "sinisterControlInvalidity",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1220749,
+        "endOffsetUtf16": 1220863
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/recherche/controler-garantie-invalidite-active",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-139",
+      "owner": "sinisterControlValidityInvalidity",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1220945,
+        "endOffsetUtf16": 1221092
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/declaration/controler-validite-sinistre-invalidite",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only",
+      "fullHttpResponse": true,
+      "responseObservation": "Angular HttpResponse; parsed JSON payload is under body"
+    },
+    {
+      "id": "employer-call-140",
+      "owner": "sinisterDeclareInvalidity",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1221163,
+        "endOffsetUtf16": 1221302
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/declaration/invalidite",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only",
+      "fullHttpResponse": true,
+      "responseObservation": "Angular HttpResponse; parsed JSON payload is under body"
+    },
+    {
+      "id": "employer-call-141",
+      "owner": "sinisterExtractRequest",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1221374,
+        "endOffsetUtf16": 1221510
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/extraction-prevoyance/editer-extraction-prevoyance",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only",
+      "fullHttpResponse": true,
+      "responseObservation": "Angular HttpResponse; parsed JSON payload is under body"
+    },
+    {
+      "id": "employer-call-142",
+      "owner": "sinisterGetAllExtract",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1221576,
+        "endOffsetUtf16": 1221733
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "{sousTypeDoc:[{code:\"ERP\"},{code:\"DPJ\"},{code:\"ERL\"}]}",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/extraction-prevoyance/recuperer-historique-extractions",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-143",
+      "owner": "sinisterSearchExtract",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1221799,
+        "endOffsetUtf16": 1221979
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "{codeDemandeTravaux:[{code:\"RETEDICL\"},{code:\"EXTPJDSIN\"},{code:\"ELRGLPRV\"}]}",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/extraction-prevoyance/rechercher-demandes-travaux-non-emises",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-144",
+      "owner": "sinisterSearchIjss",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1222043,
+        "endOffsetUtf16": 1222150
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/consultation-ijss/rechercher",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-145",
+      "owner": "sinisterDetailIjss",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1222214,
+        "endOffsetUtf16": 1222321
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/sinistre/consultation-ijss/rechercher-information",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-146",
+      "owner": "pecBenef",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1222375,
+        "endOffsetUtf16": 1222472
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "C({},e)",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/fonctionnalite-beneficiaire/demande/envoyer-prise-en-charge-hospitaliere",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    },
+    {
+      "id": "employer-call-147",
+      "owner": "enregisterConsentementCookies",
+      "method": "POST",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1224053,
+        "endOffsetUtf16": 1224174
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "bodyObservation": {
+        "encoding": "JSON",
+        "sourceExpression": "{listeCookies:e}",
+        "serverSchema": "unverified"
+      },
+      "apiRoot": "employer",
+      "baseUrl": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+      "pathPattern": "/gestion-cookies/enregistrer-consentement",
+      "pathResolution": "static-template",
+      "authentication": "Browser session; frontend sends withCredentials:true. Actual cookie/token and entitlement behavior unverified.",
+      "effects": "not comprehensively audited; GET does not imply read-only"
+    }
+  ]
+}

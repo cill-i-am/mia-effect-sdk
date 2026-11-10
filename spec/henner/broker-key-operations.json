@@ -1,0 +1,864 @@
+{
+  "portal": "Henner MyHSC broker portal",
+  "status": "static-only; no API invocation",
+  "apiRoot": "https://apim.henner.com/courtier/1.0",
+  "importantBoundary": "Separate Henner broker and auth roots. Explicit broker-to-HR handoff. This is not evidence that LYA/MIA tokens authorize these APIs.",
+  "counts": {
+    "appJavaScriptFilesParsed": 94,
+    "httpCallSitesDetected": 337,
+    "routeResolvedCallSites": 326,
+    "dynamicOrSharedLibraryCallSites": 11,
+    "distinctNormalizedMethodPathPatterns": 335,
+    "distinctByApiRoot": {
+      "courtier": 322,
+      "nomenclature": 9,
+      "auth": 3,
+      "cms": 1
+    },
+    "resolvedCallSitesByApiRoot": {
+      "courtier": 312,
+      "nomenclature": 10,
+      "auth": 3,
+      "cms": 1
+    }
+  },
+  "offsetConvention": "Zero-based JavaScript UTF-16 code unit offset into exact UTF-8 source identified by SHA-256.",
+  "keyCallSites": [
+    {
+      "id": "broker-call-003",
+      "owner": "getContracts",
+      "method": "POST",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 305731,
+        "endOffsetUtf16": 305763
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "queryFieldHints": [
+        "nombreElementPage",
+        "numeroPage",
+        "tri"
+      ],
+      "apiRoot": "courtier",
+      "baseUrl": "https://apim.henner.com/courtier/1.0",
+      "pathPatterns": [
+        "/back-office/contrats-colleges/recherche",
+        "/contrats-colleges/recherche"
+      ],
+      "pathResolution": "manually-reviewed",
+      "authentication": "Portal bearer token added by frontend interceptor; entitlement and token audience unverified.",
+      "requestBodyFields": [
+        "populationCibleCode",
+        "risqueCode",
+        "denominationClientSignataire",
+        "IdentifiantOffresCommerciales",
+        "estRadie",
+        "estRadiationEnCours",
+        "idApporteur",
+        "trigrammeContrat",
+        "numeroContrat",
+        "DateEffetMin",
+        "DateEffetMax",
+        "DateCreationMin",
+        "DateCreationMax",
+        "idCommercial"
+      ],
+      "responseEnvelopeFields": [
+        "elements",
+        "numeroPage",
+        "nombrePageTotale"
+      ],
+      "responseElementFields": [
+        "identifiant",
+        "trigramme",
+        "numero",
+        "canalVenteCode",
+        "risquePrincipal",
+        "estContratRadie",
+        "dateRadiation",
+        "populationCible",
+        "clientSignataire",
+        "apporteur",
+        "college",
+        "offreCommerciale",
+        "dateDebutEffet",
+        "estEBia"
+      ],
+      "notes": [
+        "Fields observed in frontend mappings; not a complete schema. Filter names differ from returned contract identifiers."
+      ]
+    },
+    {
+      "id": "broker-call-004",
+      "owner": "getContractsDay",
+      "method": "POST",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 305976,
+        "endOffsetUtf16": 306008
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "queryFieldHints": [
+        "nombreElementPage",
+        "numeroPage",
+        "tri"
+      ],
+      "apiRoot": "courtier",
+      "baseUrl": "https://apim.henner.com/courtier/1.0",
+      "pathPatterns": [
+        "/contrats/back-office/souscription-jour/recherche",
+        "/contrats/souscription-jour/recherche"
+      ],
+      "pathResolution": "manually-reviewed",
+      "authentication": "Portal bearer token added by frontend interceptor; entitlement and token audience unverified."
+    },
+    {
+      "id": "broker-call-005",
+      "owner": "getContract",
+      "method": "GET",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 306116,
+        "endOffsetUtf16": 306132
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "courtier",
+      "baseUrl": "https://apim.henner.com/courtier/1.0",
+      "pathPatterns": [
+        "/contrats/{contractSegment}/{contractId}"
+      ],
+      "pathResolution": "manually-reviewed",
+      "authentication": "Portal bearer token added by frontend interceptor; entitlement and token audience unverified.",
+      "responseFields": [
+        "identifiant",
+        "numero",
+        "trigramme",
+        "estEBia",
+        "colleges",
+        "offreCommerciale",
+        "dateDebutEffet",
+        "dateRadiation",
+        "risquePrincipal",
+        "modeEnvoiPrestation",
+        "devisOrigineCode",
+        "gestionnaires",
+        "acteurs",
+        "factures"
+      ],
+      "notes": [
+        "Frontend combines trigramme + numero as displayed contractNumber. contractSegment is collectif for company, otherwise individuel. Fields are consumed by frontend, not an exhaustively verified response schema."
+      ]
+    },
+    {
+      "id": "broker-call-006",
+      "owner": "getContractByContractNumber",
+      "method": "GET",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 306259,
+        "endOffsetUtf16": 306275
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "courtier",
+      "baseUrl": "https://apim.henner.com/courtier/1.0",
+      "pathPatterns": [
+        "/contrats/{contractSegment}/{trigramme}/{numero}"
+      ],
+      "pathResolution": "manually-reviewed",
+      "authentication": "Portal bearer token added by frontend interceptor; entitlement and token audience unverified.",
+      "responseFields": [
+        "identifiantAffiliation",
+        "montantRemise",
+        "dateApplicationRemise",
+        "tauxFinancement",
+        "dateApplicationTaux",
+        "prochaineDateEcheancePrincipale",
+        "libellePeriodicite",
+        "tauxNegocieReversion"
+      ],
+      "notes": [
+        "Caller passes segment, trigramme, number. Response fields used by frontend; no live response observed."
+      ]
+    },
+    {
+      "id": "broker-call-022",
+      "owner": "loadURLOavToRh",
+      "method": "GET",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 309199,
+        "endOffsetUtf16": 309247
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "text",
+      "hasRequestBody": false,
+      "apiRoot": "courtier",
+      "baseUrl": "https://apim.henner.com/courtier/1.0",
+      "pathPatterns": [
+        "/contrats/{contractId}/lien-site-rh",
+        "/contrats/{contractId}/lien-site-rh/consultation-assure-produits",
+        "/contrats/{contractId}/lien-site-rh/consultation-assures",
+        "/contrats/{contractId}/lien-site-rh/consultation-mouvements",
+        "/contrats/{contractId}/lien-site-rh/gestion-pre-inscription",
+        "/contrats/{contractId}/lien-site-rh/inscription-assure",
+        "/contrats/{contractId}/lien-site-rh/modification-assure",
+        "/contrats/{contractId}/lien-site-rh/pre-inscription",
+        "/contrats/{contractId}/lien-site-rh/validation-adhesions"
+      ],
+      "pathResolution": "manually-reviewed",
+      "authentication": "Portal bearer token added by frontend interceptor; entitlement and token audience unverified.",
+      "notes": [
+        "Response opened as a URL in a new browser tab; explicit handoff to HR portal. No actual handoff URL obtained."
+      ]
+    },
+    {
+      "id": "broker-call-023",
+      "owner": "loadURLContractsDayOavToRh",
+      "method": "GET",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 309935,
+        "endOffsetUtf16": 309983
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "text",
+      "hasRequestBody": false,
+      "apiRoot": "courtier",
+      "baseUrl": "https://apim.henner.com/courtier/1.0",
+      "pathPatterns": [
+        "/contrats/souscription-jour/{numero}/{trigramme}/{risqueCode}/lien-site-rh",
+        "/contrats/souscription-jour/{numero}/{trigramme}/{risqueCode}/lien-site-rh/consultation-assure-produits",
+        "/contrats/souscription-jour/{numero}/{trigramme}/{risqueCode}/lien-site-rh/consultation-assures",
+        "/contrats/souscription-jour/{numero}/{trigramme}/{risqueCode}/lien-site-rh/consultation-mouvements",
+        "/contrats/souscription-jour/{numero}/{trigramme}/{risqueCode}/lien-site-rh/gestion-pre-inscription",
+        "/contrats/souscription-jour/{numero}/{trigramme}/{risqueCode}/lien-site-rh/inscription-assure",
+        "/contrats/souscription-jour/{numero}/{trigramme}/{risqueCode}/lien-site-rh/modification-assure",
+        "/contrats/souscription-jour/{numero}/{trigramme}/{risqueCode}/lien-site-rh/pre-inscription",
+        "/contrats/souscription-jour/{numero}/{trigramme}/{risqueCode}/lien-site-rh/validation-adhesions"
+      ],
+      "pathResolution": "manually-reviewed",
+      "authentication": "Portal bearer token added by frontend interceptor; entitlement and token audience unverified.",
+      "notes": [
+        "Caller passes contract number, trigramme, risk code, context. Response opened as a URL in a new browser tab."
+      ]
+    },
+    {
+      "id": "broker-call-192",
+      "owner": "updateContractAssociation",
+      "method": "PUT",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 342623,
+        "endOffsetUtf16": 342788
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "apiRoot": "courtier",
+      "baseUrl": "https://apim.henner.com/courtier/1.0",
+      "pathPatterns": [
+        "/devis/back-office/demandes-adhesion/{parameter1}/saisie-contrat"
+      ],
+      "pathResolution": "static-template",
+      "authentication": "Portal bearer token added by frontend interceptor; entitlement and token audience unverified.",
+      "requestBodyFields": [
+        "trigrammeContrat",
+        "numeroContrat"
+      ],
+      "notes": [
+        "Back-office contract number association. This writes an existing reference; it does not prove insurer issuance."
+      ]
+    },
+    {
+      "id": "broker-call-202",
+      "owner": "getMembershipContractDocuments",
+      "method": "GET",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 343970,
+        "endOffsetUtf16": 343986
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": "courtier",
+      "baseUrl": "https://apim.henner.com/courtier/1.0",
+      "pathPatterns": [
+        "/devis/back-office/demandes-adhesions/{parameter1}/documents"
+      ],
+      "pathResolution": "static-template",
+      "authentication": "Portal bearer token added by frontend interceptor; entitlement and token audience unverified."
+    },
+    {
+      "id": "broker-call-203",
+      "owner": "getMembershipContractDocument",
+      "method": "GET",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 344029,
+        "endOffsetUtf16": 344142
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "blob",
+      "hasRequestBody": false,
+      "fullHttpResponse": true,
+      "apiRoot": "courtier",
+      "baseUrl": "https://apim.henner.com/courtier/1.0",
+      "pathPatterns": [
+        "/devis/demandes-adhesions/{parameter1}/documents/{parameter2}"
+      ],
+      "pathResolution": "static-template",
+      "authentication": "Portal bearer token added by frontend interceptor; entitlement and token audience unverified."
+    },
+    {
+      "id": "broker-call-205",
+      "owner": "validateMembershipSubscription",
+      "method": "POST",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 344317,
+        "endOffsetUtf16": 344402
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "apiRoot": "courtier",
+      "baseUrl": "https://apim.henner.com/courtier/1.0",
+      "pathPatterns": [
+        "/devis/back-office/demandes-adhesion/{parameter1}/souscription"
+      ],
+      "pathResolution": "static-template",
+      "authentication": "Portal bearer token added by frontend interceptor; entitlement and token audience unverified.",
+      "requestBodyFields": [],
+      "notes": [
+        "POST uses an empty JSON object. Back-office route; entitlement not established."
+      ]
+    },
+    {
+      "id": "broker-call-206",
+      "owner": "getContractDocuments",
+      "method": "GET",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 344568,
+        "endOffsetUtf16": 344585
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json-array (client expectation)",
+      "hasRequestBody": false,
+      "queryFieldHints": [
+        "typeCollegeCode"
+      ],
+      "apiRoot": "courtier",
+      "baseUrl": "https://apim.henner.com/courtier/1.0",
+      "pathPatterns": [
+        "/contrats/{contractSegment}/{contractId}/documents"
+      ],
+      "pathResolution": "manually-reviewed",
+      "authentication": "Portal bearer token added by frontend interceptor; entitlement and token audience unverified.",
+      "responseElementFields": [
+        "identifiant",
+        "titre",
+        "type.code",
+        "type.libelle",
+        "dateCreation",
+        "identifiantPropositionCommerciale",
+        "identifiantDevis",
+        "estTeleverse",
+        "estOav",
+        "estDocumentAdhesion"
+      ],
+      "notes": [
+        "Document type is server-supplied metadata. No explicit DSN/FPOC/setup-sheet type found in broker static strings. Generic documents alone do not prove setup-sheet support."
+      ]
+    },
+    {
+      "id": "broker-call-207",
+      "owner": "validerSouscriptionIndiv",
+      "method": "POST",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 344832,
+        "endOffsetUtf16": 344851
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "queryFieldHints": [
+        "identifiant-offre-commerciale"
+      ],
+      "apiRoot": "courtier",
+      "baseUrl": "https://apim.henner.com/courtier/1.0",
+      "pathPatterns": [
+        "/devis-individuel/{parameter1}/contrat"
+      ],
+      "pathResolution": "static-template",
+      "authentication": "Portal bearer token added by frontend interceptor; entitlement and token audience unverified.",
+      "requestBodyFields": [
+        "indicateurSignatureElectroniqueMail",
+        "indicateurSignatureElectroniqueUrl",
+        "identifiantPaquet"
+      ],
+      "requestConstants": {
+        "indicateurSignatureElectroniqueMail": false,
+        "indicateurSignatureElectroniqueUrl": false
+      },
+      "notes": [
+        "Frontend method submits the individual quote-to-contract operation; availability and issued policy result remain untested."
+      ]
+    },
+    {
+      "id": "broker-call-208",
+      "owner": "getContractDayDocuments",
+      "method": "GET",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 345055,
+        "endOffsetUtf16": 345072
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "queryFieldHints": [
+        "typeCollegeCode"
+      ],
+      "apiRoot": "courtier",
+      "baseUrl": "https://apim.henner.com/courtier/1.0",
+      "pathPatterns": [
+        "/contrats/{contractSegment}/souscription-jour/{parameter2}/{parameter3}/{parameter4}/documents"
+      ],
+      "pathResolution": "manually-reviewed",
+      "authentication": "Portal bearer token added by frontend interceptor; entitlement and token audience unverified."
+    },
+    {
+      "id": "broker-call-210",
+      "owner": "getContractDocument",
+      "method": "GET",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 345702,
+        "endOffsetUtf16": 345760
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "blob",
+      "hasRequestBody": false,
+      "fullHttpResponse": true,
+      "queryFieldHints": [
+        "EstDocumentAdhesion",
+        "EstOav",
+        "TypeCollegeCode",
+        "idDevis",
+        "idDocument",
+        "idPropositionCommerciale"
+      ],
+      "apiRoot": "courtier",
+      "baseUrl": "https://apim.henner.com/courtier/1.0",
+      "pathPatterns": [
+        "/contrats/{contractId}/documents/{documentTypeCode}"
+      ],
+      "pathResolution": "manually-reviewed",
+      "authentication": "Portal bearer token added by frontend interceptor; entitlement and token audience unverified.",
+      "responseHeadersConsumed": [
+        "Content-Disposition"
+      ],
+      "notes": [
+        "Path documentTypeCode is metadata type.code lowercased with underscores replaced by hyphens. Query flags are optional. Caller uses current generalInformations.id as contractId. Frontend extracts download filename/extension from Content-Disposition."
+      ]
+    },
+    {
+      "id": "broker-call-211",
+      "owner": "getContractDayDocument",
+      "method": "GET",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 346340,
+        "endOffsetUtf16": 346398
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "blob",
+      "hasRequestBody": false,
+      "fullHttpResponse": true,
+      "queryFieldHints": [
+        "estDocumentAdhesion",
+        "estIndividuel",
+        "estOav",
+        "identifiant-canal-vente"
+      ],
+      "apiRoot": "courtier",
+      "baseUrl": "https://apim.henner.com/courtier/1.0",
+      "pathPatterns": [
+        "/contrats/souscription-jour/{parameter3}/{parameter2}/documents/{documentTypeCode}/{documentId}",
+        "/devis/demandes-adhesions/{membershipId}/documents/{documentTypeCode}",
+        "/devis/{quoteId}/documents/televersements/{documentTypeCode}/{documentId}",
+        "/devis/{quoteId}/documents/{documentTypeCode}"
+      ],
+      "pathResolution": "manually-reviewed",
+      "authentication": "Portal bearer token added by frontend interceptor; entitlement and token audience unverified."
+    },
+    {
+      "id": "broker-call-212",
+      "owner": "getOldOAVUrl",
+      "method": "GET",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 346662,
+        "endOffsetUtf16": 346775
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "text",
+      "hasRequestBody": false,
+      "queryFieldHints": [
+        "idCommercial"
+      ],
+      "apiRoot": "courtier",
+      "baseUrl": "https://apim.henner.com/courtier/1.0",
+      "pathPatterns": [
+        "/redirection/lien-ancien-oav/creer-devis-TNS",
+        "/redirection/lien-ancien-oav/creer-devis-expatries",
+        "/redirection/lien-ancien-oav/creer-devis-obseques",
+        "/redirection/lien-ancien-oav/creer-devis-onesure",
+        "/redirection/lien-ancien-oav/creer-devis-particulier"
+      ],
+      "pathResolution": "manually-reviewed",
+      "authentication": "Portal bearer token added by frontend interceptor; entitlement and token audience unverified.",
+      "notes": [
+        "Segment named onesure maps to creer-devis-onesure. This is evidence of a 1SURE quote-tool handoff, not proof of a particular MIA tenant connection."
+      ]
+    },
+    {
+      "id": "broker-call-271",
+      "owner": "controlColleges",
+      "method": "POST",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 359356,
+        "endOffsetUtf16": 359375
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "apiRoot": "courtier",
+      "baseUrl": "https://apim.henner.com/courtier/1.0",
+      "pathPatterns": [
+        "/devis/{parameter1}/souscription/controle"
+      ],
+      "pathResolution": "static-template",
+      "authentication": "Portal bearer token added by frontend interceptor; entitlement and token audience unverified."
+    },
+    {
+      "id": "broker-call-280",
+      "owner": "createBackOfficeContract",
+      "method": "POST",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 360701,
+        "endOffsetUtf16": 360720
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "apiRoot": "courtier",
+      "baseUrl": "https://apim.henner.com/courtier/1.0",
+      "pathPatterns": [
+        "/devis/souscription-partenaire"
+      ],
+      "pathResolution": "static-template",
+      "authentication": "Portal bearer token added by frontend interceptor; entitlement and token audience unverified.",
+      "requestBodyFields": [
+        "identifiantApporteur",
+        "identifiantCommercial",
+        "numeroOffreCommerciale",
+        "clientSignataire.raisonSociale",
+        "clientSignataire.siret",
+        "clientSignataire.codeNaf",
+        "clientSignataire.codeCcn",
+        "clientSignataire.codeModePaiementCotisation",
+        "clientSignataire.codePeriodicite (optional)",
+        "clientSignataire.coordonneesPostales",
+        "clientSignataire.coordonneesBancaires",
+        "correspondantsEntreprise[]",
+        "garantiesSouscrites[]"
+      ],
+      "requestArrayElementFields": {
+        "correspondantsEntreprise": [
+          "codeCivilite",
+          "nom",
+          "prenom",
+          "telephone",
+          "email"
+        ],
+        "garantiesSouscrites": [
+          "codeRisque",
+          "dateDebutEffet",
+          "formules[]",
+          "criteresStatistique[]",
+          "codeTypeCollege (conditional)",
+          "ageMoyen (conditional)",
+          "estCouvertureAyantDroit (conditional)",
+          "numeroContratExterne (conditional)"
+        ],
+        "garantiesSouscrites.formules": [
+          "code",
+          "codeStructureTarifaire",
+          "tarifs[]",
+          "estRegimeAlsaceMoselle (conditional)",
+          "tauxCommission (conditional)"
+        ],
+        "garantiesSouscrites.formules.tarifs": [
+          "codeBaseCalcul",
+          "codeRegime",
+          "codeRisqueTarifaire",
+          "codePopulationTarifaire",
+          "tarifTtc"
+        ]
+      },
+      "notes": [
+        "Body shape observed in company subscription form; not a validated server schema. Requiredness, permissible values, and partner entitlement remain unknown. Caller displays success and navigates to dashboard; it does not establish synchronous policy issuance."
+      ]
+    }
+  ],
+  "supportingEvidence": [
+    {
+      "url": "https://courtage.henner.com/assets/extra-vars.js",
+      "file": "extra-vars.js",
+      "sha256": "3704dc69cc7bf6f69cc6ad3e1c61a42e5abfdc51c2ba7b68cfb64f8369489b3d",
+      "offsetUtf16": 0,
+      "evidence": "Runtime roots: courtier, nomenclature, auth, CMS; requested scopes openid partenaire.READ partenaire.WRITE."
+    },
+    {
+      "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+      "file": "main.779c58275dd244a2.js",
+      "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+      "offsetUtf16": 361278,
+      "evidence": "URL builders append configured courtier/nomenclature/auth paths to their configured origins."
+    },
+    {
+      "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+      "file": "main.779c58275dd244a2.js",
+      "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+      "offsetUtf16": 16205,
+      "evidence": "API interceptor adds Authorization bearer token and withCredentials to configured API calls except nomenclature paths; optional X-Token-Source for certain brand SSO modes."
+    },
+    {
+      "url": "https://courtage.henner.com/4349.bbd2c821a7355e93.js",
+      "file": "chunks/4349.bbd2c821a7355e93.js",
+      "sha256": "ec2f9193409983628e7f33dfe601ac992ed411580cec4bfd2a12f5b20834b8de",
+      "offsetUtf16": 4043,
+      "evidence": "Browser login constructs authorize/login URLs with client_id, response_type=token, scope, lang and redirect_uri; UserName/Passwd form fields."
+    },
+    {
+      "url": "https://courtage.henner.com/570.fe8f4ee3ecd748b8.js",
+      "file": "chunks/570.fe8f4ee3ecd748b8.js",
+      "sha256": "c458cf2380864a535a55bd7d6189a54e8d8ad24e6ddee8231c2d87bdf7ff3535",
+      "offsetUtf16": 430370,
+      "evidence": "Contract detail mapper reads response numero and trigramme; concatenates them for displayed contractNumber. Reads identifiant, colleges, offreCommerciale, acteurs and other descriptive fields."
+    },
+    {
+      "url": "https://courtage.henner.com/570.fe8f4ee3ecd748b8.js",
+      "file": "chunks/570.fe8f4ee3ecd748b8.js",
+      "sha256": "c458cf2380864a535a55bd7d6189a54e8d8ad24e6ddee8231c2d87bdf7ff3535",
+      "offsetUtf16": 432426,
+      "evidence": "Contract document response mapper reads identifiant,titre,type.code,type.libelle,dateCreation,identifiantPropositionCommerciale,identifiantDevis,estTeleverse,estOav,estDocumentAdhesion."
+    },
+    {
+      "url": "https://courtage.henner.com/7364.5fa1af24876271cb.js",
+      "file": "chunks/7364.5fa1af24876271cb.js",
+      "sha256": "b0a991e8091eb656571e666a4c35518ba4b7dd49f2c932e530b0ea9e1c5dd35d",
+      "offsetUtf16": 39555,
+      "evidence": "Contract document consumer expects JSON array and transforms each item."
+    },
+    {
+      "url": "https://courtage.henner.com/7364.5fa1af24876271cb.js",
+      "file": "chunks/7364.5fa1af24876271cb.js",
+      "sha256": "b0a991e8091eb656571e666a4c35518ba4b7dd49f2c932e530b0ea9e1c5dd35d",
+      "offsetUtf16": 40898,
+      "evidence": "Contract document download uses current contract identifier; reads Content-Disposition and downloads response blob with extracted filename/extension."
+    },
+    {
+      "url": "https://courtage.henner.com/570.fe8f4ee3ecd748b8.js",
+      "file": "chunks/570.fe8f4ee3ecd748b8.js",
+      "sha256": "c458cf2380864a535a55bd7d6189a54e8d8ad24e6ddee8231c2d87bdf7ff3535",
+      "offsetUtf16": 436388,
+      "evidence": "Contract search mapper expects elements array."
+    },
+    {
+      "url": "https://courtage.henner.com/570.fe8f4ee3ecd748b8.js",
+      "file": "chunks/570.fe8f4ee3ecd748b8.js",
+      "sha256": "c458cf2380864a535a55bd7d6189a54e8d8ad24e6ddee8231c2d87bdf7ff3535",
+      "offsetUtf16": 436434,
+      "evidence": "Contract search item mapper reads identifiant, numero, trigramme, risquePrincipal, populationCible, clientSignataire, college, offreCommerciale, dates, estEBia."
+    },
+    {
+      "url": "https://courtage.henner.com/570.fe8f4ee3ecd748b8.js",
+      "file": "chunks/570.fe8f4ee3ecd748b8.js",
+      "sha256": "c458cf2380864a535a55bd7d6189a54e8d8ad24e6ddee8231c2d87bdf7ff3535",
+      "offsetUtf16": 437230,
+      "evidence": "Displayed contract number is trigramme concatenated with numero."
+    },
+    {
+      "url": "https://courtage.henner.com/570.fe8f4ee3ecd748b8.js",
+      "file": "chunks/570.fe8f4ee3ecd748b8.js",
+      "sha256": "c458cf2380864a535a55bd7d6189a54e8d8ad24e6ddee8231c2d87bdf7ff3535",
+      "offsetUtf16": 437945,
+      "evidence": "Contract search request mapper supplies field names listed in getContracts requestBodyFields; accepts combined trigramme/numero or number-only filter."
+    },
+    {
+      "url": "https://courtage.henner.com/7364.5fa1af24876271cb.js",
+      "file": "chunks/7364.5fa1af24876271cb.js",
+      "sha256": "b0a991e8091eb656571e666a4c35518ba4b7dd49f2c932e530b0ea9e1c5dd35d",
+      "offsetUtf16": 67258,
+      "evidence": "Contract search consumer reads numeroPage and nombrePageTotale."
+    },
+    {
+      "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+      "file": "main.779c58275dd244a2.js",
+      "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+      "offsetUtf16": 573497,
+      "evidence": "Pagination helper emits nombreElementPage and numeroPage as strings when truthy; service adds optional tri."
+    },
+    {
+      "url": "https://courtage.henner.com/7364.5fa1af24876271cb.js",
+      "file": "chunks/7364.5fa1af24876271cb.js",
+      "sha256": "b0a991e8091eb656571e666a4c35518ba4b7dd49f2c932e530b0ea9e1c5dd35d",
+      "offsetUtf16": 67886,
+      "evidence": "Broker to HR handoff response is passed to window.open in a new tab."
+    },
+    {
+      "url": "https://courtage.henner.com/7364.5fa1af24876271cb.js",
+      "file": "chunks/7364.5fa1af24876271cb.js",
+      "sha256": "b0a991e8091eb656571e666a4c35518ba4b7dd49f2c932e530b0ea9e1c5dd35d",
+      "offsetUtf16": 68642,
+      "evidence": "New-contract HR handoff caller supplies numeroContract,trigramme,risqueCode,context."
+    },
+    {
+      "url": "https://courtage.henner.com/2904.926554e664efe9ee.js",
+      "file": "chunks/2904.926554e664efe9ee.js",
+      "sha256": "c3fcb1b08d19f6ed94429f2fe891f7e2d6cd24d341026ea7348a9a12860ebce9",
+      "offsetUtf16": 239119,
+      "evidence": "Partner subscription form constructs a company subscription body then invokes createBackOfficeContract; success navigates to dashboard rather than consuming an issued policy number."
+    },
+    {
+      "url": "https://courtage.henner.com/2904.926554e664efe9ee.js",
+      "file": "chunks/2904.926554e664efe9ee.js",
+      "sha256": "c3fcb1b08d19f6ed94429f2fe891f7e2d6cd24d341026ea7348a9a12860ebce9",
+      "offsetUtf16": 236137,
+      "evidence": "Partner subscription guarantees builder supplies risk, effective date, formula and tariff input fields."
+    },
+    {
+      "url": "https://courtage.henner.com/570.fe8f4ee3ecd748b8.js",
+      "file": "chunks/570.fe8f4ee3ecd748b8.js",
+      "sha256": "c458cf2380864a535a55bd7d6189a54e8d8ad24e6ddee8231c2d87bdf7ff3535",
+      "offsetUtf16": 487611,
+      "evidence": "Back-office subscription caller posts the commercial offer identifier and navigates to memberships after completion; no issued-number response mapping observed at this call site."
+    },
+    {
+      "url": "https://courtage.henner.com/703.851685970db42a25.js",
+      "file": "chunks/703.851685970db42a25.js",
+      "sha256": "2caab6e3a9103ad163106535e8b3ac1611d2bd75c15a17b081a426f358adaa20",
+      "offsetUtf16": 13871,
+      "evidence": "Individual subscription caller supplies numeroDevis, offre.id and identifiantPaquet, then refreshes membership state."
+    }
+  ],
+  "auth": {
+    "browserFlow": "Frontend constructs OAuth authorize and login URLs with response_type=token; browser login posts UserName and Passwd. Token comes from callback or permitted-origin postMessage and is held in sessionStorage/store.",
+    "authorizeUrl": "https://apim-auth.henner.com/oauth/authentication/1.0/authorize",
+    "loginUrl": "https://apim-auth.henner.com/oauth/authentication/1.0/login",
+    "queryFields": [
+      "client_id",
+      "response_type",
+      "scope",
+      "lang",
+      "redirect_uri"
+    ],
+    "scopes": [
+      "openid",
+      "partenaire.READ",
+      "partenaire.WRITE"
+    ],
+    "brokerHeader": "Authorization: Bearer <portal access token>",
+    "withCredentials": true,
+    "credentialFinding": "No usable access credentials were obtained, tested, or included. Public client IDs are not access credentials. A separate brand-specific token helper in the shared bundle does not prove partner API access."
+  },
+  "setupSheetEvidence": {
+    "scope": "All decoded string literals in the main bundle and 93 runtime-listed lazy chunks (94 application files).",
+    "searchedTerms": [
+      "DSN",
+      "FPOC",
+      "fiche ... param",
+      "setup sheet"
+    ],
+    "matches": 0,
+    "meaning": "No explicit setup-sheet operation was identified in this broker frontend. Document types are supplied dynamically by the API, so this cannot prove absence. Parent investigation found concrete DSN endpoints in the separate HR portal."
+  },
+  "limitations": [
+    "Observed client call sites are not a supported public API contract.",
+    "Shared white-label frontend contains broker/back-office and other-brand code; discovered route does not establish user entitlement.",
+    "Method/path patterns are normalized with placeholders; query combinations are not counted as distinct routes.",
+    "Conditional branches were reviewed for key operations and complex URL expressions. Additional runtime path variations may remain.",
+    "Request and response field lists are hints from client code, not exhaustive schemas.",
+    "Static call sites can be dead or brand-specific. No live response/status/permission validation occurred.",
+    "Auth config client IDs are public application identifiers, not usable access credentials. No secret values, customer data or application implementation bodies are included."
+  ]
+}

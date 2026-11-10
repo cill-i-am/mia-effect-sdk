@@ -2,3 +2,4 @@ packages/sdk/src/generated/** linguist-generated=true
 spec/*.json linguist-generated=true
 spec/frontend-metadata/*.json linguist-generated=true
 spec/frontend-metadata/*.json.gz linguist-generated=true
+spec/henner/*.json linguist-generated=true
