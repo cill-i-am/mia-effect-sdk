@@ -1,0 +1,366 @@
+{
+  "portal": "Henner employer portal",
+  "scope": "CMS and translation resource calls excluded from business route counts.",
+  "callSites": [
+    {
+      "id": "employer-call-148",
+      "owner": "getResmedFaq",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1233129,
+        "endOffsetUtf16": 1233191
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "category": "cms-content",
+      "urlExpression": "this.getDrupalUrl()+\"&content_id=resmed_faq_rh\"",
+      "resolution": "excluded from employer business route inventory"
+    },
+    {
+      "id": "employer-call-149",
+      "owner": "getDataPortalTitle",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1233434,
+        "endOffsetUtf16": 1233503
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "category": "cms-content",
+      "urlExpression": "this.getDrupalUrl()+\"&content_id=data_portal_rh_title\"",
+      "resolution": "excluded from employer business route inventory"
+    },
+    {
+      "id": "employer-call-150",
+      "owner": "getDataPortalRenewalSummary",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1233779,
+        "endOffsetUtf16": 1233853
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "category": "cms-content",
+      "urlExpression": "this.getDrupalUrl()+\"&content_id=dataportal_renewal_apercu\"",
+      "resolution": "excluded from employer business route inventory"
+    },
+    {
+      "id": "employer-call-151",
+      "owner": "getDataPortalRenewal",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1234117,
+        "endOffsetUtf16": 1234192
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "category": "cms-content",
+      "urlExpression": "this.getDrupalUrl()+\"&content_id=dataportal_renewal_details\"",
+      "resolution": "excluded from employer business route inventory"
+    },
+    {
+      "id": "employer-call-152",
+      "owner": "getDataPortalNews",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1234440,
+        "endOffsetUtf16": 1234516
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "category": "cms-content",
+      "urlExpression": "this.getDrupalUrl()+\"&content_id=data_portal_rh_news_famille\"",
+      "resolution": "excluded from employer business route inventory"
+    },
+    {
+      "id": "employer-call-153",
+      "owner": "getLoginImage",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1234749,
+        "endOffsetUtf16": 1234812
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "category": "cms-content",
+      "urlExpression": "this.getDrupalUrl()+\"&content_id=image_login_rh\"",
+      "resolution": "excluded from employer business route inventory"
+    },
+    {
+      "id": "employer-call-154",
+      "owner": "getLogo",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1235113,
+        "endOffsetUtf16": 1235170
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "category": "cms-content",
+      "urlExpression": "this.getDrupalUrl(t)+\"&content_id=logo_rh\"",
+      "resolution": "excluded from employer business route inventory"
+    },
+    {
+      "id": "employer-call-155",
+      "owner": "getLogoHenner",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1235395,
+        "endOffsetUtf16": 1235459
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "category": "cms-content",
+      "urlExpression": "this.getDrupalUrl(\"henner\")+\"&content_id=logo_rh\"",
+      "resolution": "excluded from employer business route inventory"
+    },
+    {
+      "id": "employer-call-156",
+      "owner": "getLoginInfoMessage",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1235706,
+        "endOffsetUtf16": 1235776
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "category": "cms-content",
+      "urlExpression": "this.getDrupalUrl()+\"&content_id=message_login_info_rh\"",
+      "resolution": "excluded from employer business route inventory"
+    },
+    {
+      "id": "employer-call-157",
+      "owner": "getLoginAlertMessage",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1236032,
+        "endOffsetUtf16": 1236103
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "category": "cms-content",
+      "urlExpression": "this.getDrupalUrl()+\"&content_id=message_login_alert_rh\"",
+      "resolution": "excluded from employer business route inventory"
+    },
+    {
+      "id": "employer-call-158",
+      "owner": "getFAQ",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1236318,
+        "endOffsetUtf16": 1236376
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "category": "cms-content",
+      "urlExpression": "this.getDrupalUrlFaq()+\"&content_id=faq_rh\"",
+      "resolution": "excluded from employer business route inventory"
+    },
+    {
+      "id": "employer-call-159",
+      "owner": "getFAQ",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1236489,
+        "endOffsetUtf16": 1236554
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "category": "cms-content",
+      "urlExpression": "this.getDrupalUrlFaq()+\"&content_id=\"+r.content_id",
+      "resolution": "excluded from employer business route inventory"
+    },
+    {
+      "id": "employer-call-160",
+      "owner": "getFooter",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1237379,
+        "endOffsetUtf16": 1237432
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "category": "cms-content",
+      "urlExpression": "this.getDrupalUrl()+`&content_id=${t}`",
+      "resolution": "excluded from employer business route inventory"
+    },
+    {
+      "id": "employer-call-161",
+      "owner": "getContentFromDrupal",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1238021,
+        "endOffsetUtf16": 1238102
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "category": "cms-content",
+      "urlExpression": "this.getDrupalUrl()+`&content_id=${e}`",
+      "resolution": "excluded from employer business route inventory"
+    },
+    {
+      "id": "employer-call-162",
+      "owner": "getTranslation",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1293992,
+        "endOffsetUtf16": 1294041
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "category": "translation-resource",
+      "urlExpression": "${this.prefix}${e}${this.suffix}",
+      "resolution": "excluded from employer business route inventory"
+    },
+    {
+      "id": "employer-call-163",
+      "owner": "getTranslation",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1294044,
+        "endOffsetUtf16": 1294113
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "category": "translation-resource",
+      "urlExpression": "${this.prefix}brand/${this.brand}/${e}${this.suffix}",
+      "resolution": "excluded from employer business route inventory"
+    },
+    {
+      "id": "employer-call-164",
+      "owner": "catchErrorHandler",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1294220,
+        "endOffsetUtf16": 1294267
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "category": "translation-resource",
+      "urlExpression": "${this.prefix}en${this.suffix}",
+      "resolution": "excluded from employer business route inventory"
+    },
+    {
+      "id": "employer-call-165",
+      "owner": "catchErrorHandler",
+      "method": "GET",
+      "source": {
+        "file": "chunk-4RNWU2ZH.js",
+        "url": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+        "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+        "offsetUtf16": 1294270,
+        "endOffsetUtf16": 1294337
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "category": "translation-resource",
+      "urlExpression": "${this.prefix}brand/${this.brand}/en${this.suffix}",
+      "resolution": "excluded from employer business route inventory"
+    }
+  ]
+}

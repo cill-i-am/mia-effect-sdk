@@ -1,0 +1,518 @@
+{
+  "title": "Henner HR DSN, contract identity, and login UI audit",
+  "createdAt": "2026-11-10T21:33:45.208426+00:00",
+  "status": "Static frontend observations only; no API calls or authenticated responses validated.",
+  "sources": {
+    "dsn": {
+      "file": "chunk-LIFWAF3P.js",
+      "sourceUrl": "https://hr.henner.com/chunk-LIFWAF3P.js",
+      "sha256": "8254ed53b8fde4fa4282bb02276dcba624d7823497acd7269f4f45d942879775",
+      "bytes": 57435
+    },
+    "home": {
+      "file": "chunk-KMQ5XUWL.js",
+      "sourceUrl": "https://hr.henner.com/chunk-KMQ5XUWL.js",
+      "sha256": "6087a08ad2541b037390c46336f29d50e7f0bc574ec6a9440a4872e998a30891",
+      "bytes": 142083
+    },
+    "shared": {
+      "file": "chunk-4RNWU2ZH.js",
+      "sourceUrl": "https://hr.henner.com/chunk-4RNWU2ZH.js",
+      "sha256": "a4e845b509d4e5aae4fb8770ed3ea56e2d4e7cbf910e1992ca4c78c550cb998f",
+      "bytes": 1497473
+    },
+    "main": {
+      "file": "main-BC54FSLC.js",
+      "sourceUrl": "https://hr.henner.com/main-BC54FSLC.js",
+      "sha256": "e68fd896fc7a5c1879b0b3f1d20f1179ca11ec36fa2383c2616465468b2e6368",
+      "bytes": 107400
+    }
+  },
+  "baseUrlTemplate": "https://apim.henner.com/site_rh/1.0/api-rh/{codeSite}/{lang}",
+  "defaultSiteFromParentAudit": {
+    "codeSite": 12,
+    "client": "henner"
+  },
+  "offsetConventions": {
+    "charOffset": "zero-based Python Unicode code-point index",
+    "utf16Offset": "zero-based UTF-16 code-unit index",
+    "byteOffset": "zero-based UTF-8 byte index",
+    "sourceHashes": "raw retrieved bytes"
+  },
+  "dsn": {
+    "requestBodyMapping": {
+      "numeroContrat": "selectedContract.numeroContrat (copied without conversion)",
+      "numeroClient": "selectedContract.numeroClient (copied without conversion)",
+      "typeClient": "selectedContract.typeClient (copied without conversion)",
+      "trigramme": "selectedContract.trigramme (copied without conversion)",
+      "numeroContratExterne": "parseInt(selectedContract.numeroExterne, 10)"
+    },
+    "operations": [
+      {
+        "method": "POST",
+        "path": "/dsn/parametrage/consulter-fiche",
+        "wrapper": "getDSNDetail",
+        "requestBody": "requestBodyMapping",
+        "responseEnvelopeObserved": [
+          "status",
+          "message",
+          "data"
+        ],
+        "successCondition": "status === \"OK\"",
+        "evidence": [
+          "dsnRequest"
+        ]
+      },
+      {
+        "method": "POST",
+        "path": "/dsn/parametrage/telecharger-fiche",
+        "wrapper": "downloadDSNFiche",
+        "requestBody": "requestBodyMapping",
+        "responseEnvelopeObserved": [
+          "status",
+          "message",
+          "data"
+        ],
+        "responseDataObserved": {
+          "flux": "Base64-encoded document, converted to Blob by frontend",
+          "typeMime": "MIME type passed to Blob conversion",
+          "nomFichier": "file basename",
+          "extension": "optional extension appended using a dot if truthy"
+        },
+        "successCondition": "status === \"OK\"",
+        "evidence": [
+          "dsnDownload",
+          "dsnContractParams"
+        ]
+      },
+      {
+        "method": "POST",
+        "path": "/dsn/parametrage/reemettre-fiche",
+        "wrapper": "reemitDSNFiche",
+        "requestBody": "requestBodyMapping",
+        "responseEnvelopeObserved": [
+          "status",
+          "message",
+          "error.code"
+        ],
+        "behavior": "Mutation: reissues setup sheet. UI reloads detail after completion. Non-OK error code 1000 is excluded from the displayed error branch; its server meaning is unknown.",
+        "evidence": [
+          "dsnReemit",
+          "dsnContractParams"
+        ]
+      }
+    ],
+    "detailResponseDataObserved": [
+      {
+        "path": "data.ficheParametrage.emailDestinataire",
+        "charOffset": 26666,
+        "byteOffset": 26666
+      },
+      {
+        "path": "data.ficheParametrage.dateEmission",
+        "charOffset": 34893,
+        "byteOffset": 34893
+      },
+      {
+        "path": "data.ficheParametrage.dateApplication",
+        "charOffset": 35112,
+        "byteOffset": 35112
+      },
+      {
+        "path": "data.ficheParametrage.accesReemission",
+        "charOffset": 35188,
+        "byteOffset": 35188
+      },
+      {
+        "path": "data.ficheParametrage.accesTelechargement",
+        "charOffset": 35301,
+        "byteOffset": 35301
+      },
+      {
+        "path": "data.ficheParametrage.messageAccesReemission",
+        "charOffset": 27539,
+        "byteOffset": 27539
+      },
+      {
+        "path": "data.ficheParametrage.messageAccesTelechargement",
+        "charOffset": 27754,
+        "byteOffset": 27754
+      },
+      {
+        "path": "data.combinaisonsParametrage[].combinaison",
+        "charOffset": 28526,
+        "byteOffset": 28526
+      },
+      {
+        "path": "data.combinaisonsParametrage[].presenteFP",
+        "charOffset": 28555,
+        "byteOffset": 28555
+      },
+      {
+        "path": "data.combinaisonsParametrage[].presenteFichier",
+        "charOffset": 28611,
+        "byteOffset": 28611
+      },
+      {
+        "path": "data.combinaisonsParametrage[].referenceContrat",
+        "charOffset": 28670,
+        "byteOffset": 28670
+      },
+      {
+        "path": "data.combinaisonsParametrage[].codeOrganisme",
+        "charOffset": 28697,
+        "byteOffset": 28697
+      },
+      {
+        "path": "data.combinaisonsParametrage[].codeDelegataire",
+        "charOffset": 28721,
+        "byteOffset": 28721
+      },
+      {
+        "path": "data.combinaisonsParametrage[].montant",
+        "charOffset": 28747,
+        "byteOffset": 28747
+      },
+      {
+        "path": "data.combinaisonsParametrage[].commentaire",
+        "charOffset": 28139,
+        "byteOffset": 28139
+      },
+      {
+        "path": "data.dsnMensuelle.mouvement",
+        "charOffset": 29214,
+        "byteOffset": 29214
+      },
+      {
+        "path": "data.dsnMensuelle.cotisation",
+        "charOffset": 29516,
+        "byteOffset": 29516
+      },
+      {
+        "path": "data.dsnMensuelle.dateDerniereDsn",
+        "charOffset": 29857,
+        "byteOffset": 29857
+      },
+      {
+        "path": "data.dsnEvenementielle.mouvement",
+        "charOffset": 30071,
+        "byteOffset": 30071
+      },
+      {
+        "path": "data.dsnEvenementielle.cotisation",
+        "charOffset": 30383,
+        "byteOffset": 30383
+      },
+      {
+        "path": "data.dsnEvenementielle.dateFinContrat",
+        "charOffset": 30732,
+        "byteOffset": 30732
+      },
+      {
+        "path": "data.historique[].dateReception",
+        "charOffset": 31089,
+        "byteOffset": 31089
+      },
+      {
+        "path": "data.historique[].dateDeclaration",
+        "charOffset": 31147,
+        "byteOffset": 31147
+      },
+      {
+        "path": "data.historique[].dateEcheance",
+        "charOffset": 31207,
+        "byteOffset": 31207
+      },
+      {
+        "path": "data.historique[].numeroOrdre",
+        "charOffset": 31253,
+        "byteOffset": 31253
+      },
+      {
+        "path": "data.historique[].nomEmmeteur",
+        "charOffset": 31275,
+        "byteOffset": 31275
+      },
+      {
+        "path": "data.historique[].sirenEntreprise",
+        "charOffset": 31297,
+        "byteOffset": 31297
+      },
+      {
+        "path": "data.historique[].typeDSN",
+        "charOffset": 31323,
+        "byteOffset": 31323
+      },
+      {
+        "path": "data.historique[].typeDeclaration",
+        "charOffset": 31341,
+        "byteOffset": 31341
+      },
+      {
+        "path": "data.parametrage.evenementielle[].changement",
+        "charOffset": 31695,
+        "byteOffset": 31695
+      },
+      {
+        "path": "data.parametrage.evenementielle[].traitement",
+        "charOffset": 31723,
+        "byteOffset": 31723
+      },
+      {
+        "path": "data.parametrage.mensuelle[].changement",
+        "charOffset": 32102,
+        "byteOffset": 32102
+      },
+      {
+        "path": "data.parametrage.mensuelle[].traitement",
+        "charOffset": 32130,
+        "byteOffset": 32130
+      },
+      {
+        "path": "data.parametrage.cotisations.libelle",
+        "charOffset": 32385,
+        "byteOffset": 32385
+      },
+      {
+        "path": "data.parametrage.cotisations.validation",
+        "charOffset": 32442,
+        "byteOffset": 32442
+      }
+    ],
+    "availability": "Contract estEligibitleConsultationDSN gates the DSN screen. ficheParametrage.accesTelechargement and accesReemission separately control action availability; message fields explain unavailability.",
+    "fileFormatLimitation": "The UI uses returned typeMime/extension; no hard-coded proof that every response is PDF or XML.",
+    "schemaLimitation": "Observed fields are the subset consumed by the UI, not a complete validated server schema. Nullability and most primitive types remain unverified."
+  },
+  "contractIdentity": {
+    "method": "GET",
+    "path": "/utilisateur/contrats",
+    "dsnCollection": "Object.values(response.data.listeTotale)",
+    "initialSelection": "First item with truthy estEligibitleConsultationDSN (exact source spelling)",
+    "display": "libelle + \" - \" + identifiantExterne",
+    "observedFields": [
+      "numeroContrat",
+      "numeroClient",
+      "typeClient",
+      "trigramme",
+      "numeroExterne",
+      "identifiantExterne",
+      "libelle",
+      "estEligibitleConsultationDSN"
+    ],
+    "distinctIdentifiers": {
+      "numeroContrat": "Copied into DSN request",
+      "numeroExterne": "Parsed as base-10 integer into numeroContratExterne",
+      "identifiantExterne": "Displayed and searched by contract picker",
+      "referenceContrat": "Returned in each DSN combination with codeOrganisme and codeDelegataire"
+    },
+    "warning": "These names do not establish that all four values are equivalent or that one is the required insurer policy number."
+  },
+  "authentication": {
+    "login": {
+      "method": "POST",
+      "path": "/securite/login",
+      "requestBody": {
+        "identifiant": "trimmed identifier from login form",
+        "motDePasse": "trimmed password from login form"
+      },
+      "responseObserved": [
+        "status",
+        "message",
+        "error.code",
+        "data.utilisateur",
+        "data.utilisateur.identifiant",
+        "data.authentificationRenforceeRequise",
+        "data.changementMotDePasseRequis",
+        "data.redirigerVersAutreSite",
+        "data.urlSite"
+      ],
+      "uiErrorCodes": {
+        "101": "wrong credentials translation",
+        "100": "account locked dialog"
+      },
+      "uiBehavior": "MFA required flag routes to MFA; password-change flag opens change dialog; redirect flag uses returned site URL."
+    },
+    "mfaGenerate": {
+      "method": "GET",
+      "path": "/mfa/generer",
+      "requestBody": null,
+      "responseObserved": [
+        "message",
+        "data.codeEnvoye",
+        "data.tempsMort"
+      ],
+      "notes": "Triggered when MFA component initializes. tempsMort is treated as seconds; successful generation uses a default 20-second resend timer. Code delivery channel not established."
+    },
+    "mfaValidate": {
+      "method": "GET",
+      "path": "/mfa/valider/{code}",
+      "pathParameter": "code: exactly six digits validated by form",
+      "requestBody": null,
+      "responseObserved": [
+        "status",
+        "message"
+      ],
+      "notes": "UI treats status KO as failure. No explicit success payload schema is visible."
+    },
+    "transport": "API client options include withCredentials from configuration (default true). Cookie-backed browser session is a reasonable inference, not a validated login capture; cookie names/attributes are unknown.",
+    "csrf": "Helpers read localStorage key CSRF and expose cleCsrf, but inspected DSN requests do not append it. Do not invent a required CSRF wire header or body field.",
+    "legacySessionHelper": "getSession returns {cleSession:this.sessionId, encrypt:this.encryptKey}; this helper alone is not evidence these fields occur in a login response.",
+    "noBearerClaim": "No bearer-token authentication was established from inspected caller code."
+  },
+  "evidence": {
+    "dsnRoute": {
+      "source": "main",
+      "charOffset": 93711,
+      "utf16Offset": 93711,
+      "byteOffset": 93729,
+      "needle": "path:\"dsn\",loadChildren:()=>import(\"./chunk-LIFWAF3P.js\")"
+    },
+    "dsnContractSelection": {
+      "source": "dsn",
+      "charOffset": 39235,
+      "utf16Offset": 39235,
+      "byteOffset": 39235,
+      "needle": "this.userService.getContracts(\"dsn\")"
+    },
+    "dsnRequest": {
+      "source": "dsn",
+      "charOffset": 39640,
+      "utf16Offset": 39640,
+      "byteOffset": 39640,
+      "needle": "this.userService.getDSNDetail({"
+    },
+    "dsnContractParams": {
+      "source": "dsn",
+      "charOffset": 41808,
+      "utf16Offset": 41808,
+      "byteOffset": 41808,
+      "needle": "getContractParams(t){"
+    },
+    "dsnDownload": {
+      "source": "dsn",
+      "charOffset": 40976,
+      "utf16Offset": 40976,
+      "byteOffset": 40976,
+      "needle": "this.userService.downloadDSNFiche(this.getData())"
+    },
+    "dsnReemit": {
+      "source": "dsn",
+      "charOffset": 41352,
+      "utf16Offset": 41352,
+      "byteOffset": 41352,
+      "needle": "this.userService.reemitDSNFiche(this.getData())"
+    },
+    "dsnCombinationFields": {
+      "source": "dsn",
+      "charOffset": 28524,
+      "utf16Offset": 28524,
+      "byteOffset": 28524,
+      "needle": "_(t.combinaison)"
+    },
+    "dsnHistoryFields": {
+      "source": "dsn",
+      "charOffset": 31089,
+      "utf16Offset": 31089,
+      "byteOffset": 31089,
+      "needle": "t.dateReception,\"dd/MM/yyyy\""
+    },
+    "dsnFicheFields": {
+      "source": "dsn",
+      "charOffset": 34885,
+      "utf16Offset": 34885,
+      "byteOffset": 34885,
+      "needle": "t.detail.ficheParametrage.dateEmission"
+    },
+    "dsnParametrageFields": {
+      "source": "dsn",
+      "charOffset": 32377,
+      "utf16Offset": 32377,
+      "byteOffset": 32377,
+      "needle": "t.detail.parametrage.cotisations.libelle"
+    },
+    "contractsHttpMethod": {
+      "source": "shared",
+      "charOffset": 1209605,
+      "utf16Offset": 1209605,
+      "byteOffset": 1209605,
+      "needle": "getContracts(){return this.http.get("
+    },
+    "contractsResponseCollection": {
+      "source": "shared",
+      "charOffset": 1248996,
+      "utf16Offset": 1248996,
+      "byteOffset": 1248996,
+      "needle": "getContracts(e,t=!1)"
+    },
+    "contractDisplay": {
+      "source": "shared",
+      "charOffset": 1478743,
+      "utf16Offset": 1478743,
+      "byteOffset": 1478747,
+      "needle": "displayFn(e){return e?e.libelle+\" - \"+e.identifiantExterne"
+    },
+    "loginRequest": {
+      "source": "shared",
+      "charOffset": 1248560,
+      "utf16Offset": 1248560,
+      "byteOffset": 1248560,
+      "needle": "login(e,t={},r=!1){"
+    },
+    "loginUIResponse": {
+      "source": "home",
+      "charOffset": 60056,
+      "utf16Offset": 60056,
+      "byteOffset": 60062,
+      "needle": "this.userService.login({identifier:"
+    },
+    "mfaForm": {
+      "source": "home",
+      "charOffset": 128801,
+      "utf16Offset": 128801,
+      "byteOffset": 128813,
+      "needle": "this.form=this.fb.group({code:[\"\",[b.required,b.minLength(6)"
+    },
+    "mfaValidateUI": {
+      "source": "home",
+      "charOffset": 130117,
+      "utf16Offset": 130117,
+      "byteOffset": 130129,
+      "needle": "this.api.mfaValider(e).subscribe"
+    },
+    "mfaGenerateUI": {
+      "source": "home",
+      "charOffset": 130489,
+      "utf16Offset": 130489,
+      "byteOffset": 130501,
+      "needle": "this.api.mfaGenerer().subscribe"
+    },
+    "mfaHttp": {
+      "source": "shared",
+      "charOffset": 1196696,
+      "utf16Offset": 1196696,
+      "byteOffset": 1196696,
+      "needle": "mfaGenerer(){"
+    },
+    "httpOptions": {
+      "source": "shared",
+      "charOffset": 1222630,
+      "utf16Offset": 1222630,
+      "byteOffset": 1222630,
+      "needle": "getHttpOptions(e=\"application/json\")"
+    },
+    "csrfHelper": {
+      "source": "shared",
+      "charOffset": 1222507,
+      "utf16Offset": 1222507,
+      "byteOffset": 1222507,
+      "needle": "getCSRF(){"
+    },
+    "legacySessionHelper": {
+      "source": "shared",
+      "charOffset": 1248489,
+      "utf16Offset": 1248489,
+      "byteOffset": 1248489,
+      "needle": "getSession(){return{cleSession:"
+    }
+  }
+}

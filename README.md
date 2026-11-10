@@ -1,9 +1,10 @@
 # MIA Effect SDK
 
 Use TypeScript and Effect 4 to price insurance, start a quote's subscription,
-read policy references, and generate payroll setup sheets through MIA / LYA.
-The SDK provides named operations, runtime schemas, typed failures, and injectable
-HTTP and credential services. Its operation-based design follows
+read insurer references stored in LYA, and generate LYA payroll information
+sheets. The SDK wraps MIA / LYA interfaces with named operations, runtime schemas,
+typed failures, and injectable HTTP and credential services. Its operation-based
+design follows
 [Distilled](https://distilled.cloud/).
 
 The SDK combines the supplied MIA Postman collection with interfaces recovered
@@ -14,21 +15,20 @@ contents still need validation in an authorized test environment.
 
 ## Supported insurance operations
 
-The SDK includes the three operations needed to move from a quote toward an
-insurance scheme and its documents:
+The three requested insurance workflows have different levels of coverage:
 
 | Task | SDK entry point | Result |
 | --- | --- | --- |
-| [Purchase insurance](#purchase-insurance) | `Quotes.subscribeWithInsurer(quoteNumber)` | Starts the insurer subscription action; read quote state to establish the outcome |
-| [Retrieve a policy number](#retrieve-a-policy-number) | `Contracts.read(contractId)` | Returns a contract whose `numeroCompagnie` may contain the insurer policy reference |
-| [Get a scheme setup sheet](#get-a-scheme-setup-sheet) | `Documents.generatePayrollSheet(projectNumber)` or `Documents.generateEnterprisePayrollSheet(quoteNumber)` | Generates a payroll setup/information sheet and provides a filename or document URL |
+| [Purchase insurance](#purchase-insurance) | `Quotes.subscribeWithInsurer(quoteNumber)` | Starts LYA's observed insurer subscription action; product support and final binding remain unverified |
+| [Retrieve a policy number](#retrieve-a-policy-number) | `Contracts.read(contractId)` | Reads insurer references stored on a LYA contract; Henner issuance and synchronization remain unverified |
+| [Generate a LYA payroll information sheet](#get-a-scheme-setup-sheet) | `Documents.generatePayrollSheet(projectNumber)` or `Documents.generateEnterprisePayrollSheet(quoteNumber)` | Requests a LYA payroll information sheet and returns a filename or document URL; equivalence to Henner's DSN/FPOC sheet remains unverified |
 
 These calls return lazy Effects. A request runs when you execute the Effect with
 a configured client. The [setup example](#get-started) shows how to provide one.
 
 ### Purchase insurance
 
-To start the insurer subscription action for a selected quote, call
+To start the subscription action observed in LYA for a selected quote, call
 `Quotes.subscribeWithInsurer(quoteNumber)`. It sends this request on the
 `platform` service:
 
@@ -44,7 +44,8 @@ The launch response has no established result schema, so the SDK returns
 `unknown`. The application reloads the quotes to inspect subscription state.
 Use `Quotes.read(quoteNumber)` or `Quotes.listForProject(projectNumber)` to read
 that state; successful request completion alone does not establish policy
-issuance.
+issuance. Support for a particular MIA product and the point at which cover
+becomes bound still need validation.
 
 The SDK exposes the surrounding operations separately:
 
@@ -78,17 +79,21 @@ the `platform` service:
 GET /lyaptf/api/courtage/contrat/lire/{contractId}
 ```
 
-Pass the internal LYA contract ID as `contractId`. Read the insurer policy
+Pass the internal LYA contract ID as `contractId`. Read the stored insurer
 reference from **`contract.numeroCompagnie`** in the SDK result. The equivalent
 field in the HTTP response is `body.numeroCompagnie`; the SDK unwraps `body`.
 Check for an absent, `null`, or empty value before using the reference.
+
+This field is editable in LYA and can be supplied when creating or linking the
+internal contract. A stored value does not establish final Henner issuance.
+Automatic synchronization of policy references from Henner remains unverified.
 
 The contract carries several identifiers with different purposes:
 
 | Field | Meaning |
 | --- | --- |
 | `numeroInterne` | Internal LYA contract ID, used in the read URL |
-| `numeroCompagnie` | Insurer policy/contract reference |
+| `numeroCompagnie` | Insurer policy/contract reference stored in LYA |
 | `adhesionNumero` | Membership or enrollment reference |
 | `assureNumero` | Insurer's reference for the insured |
 | `risqueDetaille.delegataireNumero` | Administrator reference |
@@ -101,9 +106,10 @@ See the [contract API reference](docs/CURATED_API.md#contracts).
 
 ### Get a scheme setup sheet
 
-The recovered document type is a payroll setup/information sheet, called
-**Fiche Information paie** in the main application. Two flows generate it.
-Use the flow supported by your tenant and product.
+The SDK exposes two flows for generating a LYA payroll information sheet, called
+**Fiche Information paie** in the main application. Its equivalence to Henner's
+DSN/FPOC setup sheet has not been established. Use the flow supported by your
+tenant and product.
 
 #### Generate from a project
 
@@ -149,11 +155,22 @@ GET /lyaptf/api/assure/projet/parcours/genererFicheParametragePaie/{quoteNumber}
 Despite `projet` in the URL, the caller passes the **selected quote's
 `numeroInterne`**, not the project number.
 
-No generated document was inspected. These routes establish payroll setup-sheet
-functionality, but do not establish that the output is the exact insurer-issued
-scheme sheet or a standardized setup file for DSN payroll reporting. Verify that
-the document meets your integration's requirements. See the
+No generated document was inspected. The routes and UI labels establish a LYA
+payroll information workflow; the document's contents still need validation.
+Verify that the output meets your integration's requirements. See the
 [payroll document evidence](docs/REVERSE_ENGINEERING.md#payroll-setup-sheets).
+
+### Henner portal boundary
+
+Henner has a separate [employer portal](https://hr.henner.com/). Its public
+frontend exposes separate operations to consult, download, and request reissue
+of DSN setup sheets. These operations have not been tested with authenticated
+access and are not included in this SDK. See the
+[Henner API findings](docs/HENNER_API.md) for their routes and evidence.
+
+LYA may integrate with Henner behind its own APIs. The observed subscription
+actions, stored references, and payroll generator do not establish complete
+coverage of Henner's policy issuance and DSN document workflows.
 
 ## Get started
 
@@ -266,7 +283,7 @@ The curated SDK has **58 operations** across these namespaces:
 | `Projects` | Read state, manage subscription and administration, create/link an internal contract |
 | `Quotes` | Read/list, select proposals, choose a quote, start/control insurer subscription |
 | `Contracts` | Read/search/save, list for a customer, stream paginated search results |
-| `Documents` | Generate documents/setup sheets, resolve downloads, list and validate documents |
+| `Documents` | Generate LYA documents/payroll information sheets, resolve downloads, list and validate documents |
 | `Customers` | Create/read customers and search people/companies |
 | `Reference` | List insurers and look up codifications |
 | `Tasks` | Save the observed task payload, including unresolved literal field names |
@@ -376,7 +393,7 @@ configured to run these checks without insurance credentials. See the
 Before running a product workflow against a tenant, validate its service URLs,
 authentication scopes, required payloads, and completion states in an authorized
 test environment. The SDK tests do not establish carrier binding, policy
-issuance, or the contents of the generated setup sheets.
+issuance, or the contents of the generated payroll information sheets.
 
 ## Evidence and regeneration
 

@@ -1,0 +1,251 @@
+{
+  "portal": "Henner MyHSC broker portal",
+  "portalUrl": "https://courtage.henner.com/",
+  "retrievedAtUtc": "2026-11-10",
+  "scope": "Public static frontend analysis only. No authentication or business endpoint was invoked.",
+  "offsetConvention": "Zero-based JavaScript UTF-16 code unit offset into exact UTF-8 source identified by SHA-256.",
+  "counts": {
+    "appJavaScriptFilesParsed": 94,
+    "httpCallSitesDetected": 337,
+    "routeResolvedCallSites": 326,
+    "dynamicOrSharedLibraryCallSites": 11,
+    "distinctNormalizedMethodPathPatterns": 335,
+    "distinctByApiRoot": {
+      "courtier": 322,
+      "nomenclature": 9,
+      "auth": 3,
+      "cms": 1
+    },
+    "resolvedCallSitesByApiRoot": {
+      "courtier": 312,
+      "nomenclature": 10,
+      "auth": 3,
+      "cms": 1
+    }
+  },
+  "limitations": [
+    "Observed client call sites are not a supported public API contract.",
+    "Shared white-label frontend contains broker/back-office and other-brand code; discovered route does not establish user entitlement.",
+    "Method/path patterns are normalized with placeholders; query combinations are not counted as distinct routes.",
+    "Conditional branches were reviewed for key operations and complex URL expressions. Additional runtime path variations may remain.",
+    "Request and response field lists are hints from client code, not exhaustive schemas.",
+    "Static call sites can be dead or brand-specific. No live response/status/permission validation occurred.",
+    "Auth config client IDs are public application identifiers, not usable access credentials. No secret values, customer data or application implementation bodies are included."
+  ],
+  "callSites": [
+    {
+      "id": "broker-call-239",
+      "owner": "getDocumentByUrl",
+      "method": "GET",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 351086,
+        "endOffsetUtf16": 351162
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "blob",
+      "hasRequestBody": false,
+      "fullHttpResponse": true,
+      "withCredentials": true,
+      "apiRoot": null,
+      "resolution": "dynamic-or-shared-library; no concrete route catalogued",
+      "category": "runtime-resource-url"
+    },
+    {
+      "id": "broker-call-284",
+      "owner": "getTranslation",
+      "method": "GET",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 2575289,
+        "endOffsetUtf16": 2575338
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "resolution": "dynamic-or-shared-library; no concrete route catalogued",
+      "category": "runtime-resource-url"
+    },
+    {
+      "id": "broker-call-285",
+      "owner": "loadDiscoveryDocument",
+      "method": "GET",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 2591370,
+        "endOffsetUtf16": 2591387
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "resolution": "dynamic-or-shared-library; no concrete route catalogued",
+      "category": "bundled-oauth-library"
+    },
+    {
+      "id": "broker-call-286",
+      "owner": "loadJwks",
+      "method": "GET",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 2592724,
+        "endOffsetUtf16": 2592751
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": false,
+      "apiRoot": null,
+      "resolution": "dynamic-or-shared-library; no concrete route catalogued",
+      "category": "bundled-oauth-library"
+    },
+    {
+      "id": "broker-call-287",
+      "owner": "loadUserProfile",
+      "method": "GET",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 2594830,
+        "endOffsetUtf16": 2594918
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "text",
+      "hasRequestBody": false,
+      "fullHttpResponse": true,
+      "apiRoot": null,
+      "resolution": "dynamic-or-shared-library; no concrete route catalogued",
+      "category": "bundled-oauth-library"
+    },
+    {
+      "id": "broker-call-288",
+      "owner": "fetchTokenUsingGrant",
+      "method": "POST",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 2596712,
+        "endOffsetUtf16": 2596762
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "apiRoot": null,
+      "resolution": "dynamic-or-shared-library; no concrete route catalogued",
+      "category": "bundled-oauth-library"
+    },
+    {
+      "id": "broker-call-289",
+      "owner": "refreshToken",
+      "method": "POST",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 2598043,
+        "endOffsetUtf16": 2598093
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "apiRoot": null,
+      "resolution": "dynamic-or-shared-library; no concrete route catalogued",
+      "category": "bundled-oauth-library"
+    },
+    {
+      "id": "broker-call-290",
+      "owner": "fetchAndProcessToken",
+      "method": "POST",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 2612255,
+        "endOffsetUtf16": 2612305
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "apiRoot": null,
+      "resolution": "dynamic-or-shared-library; no concrete route catalogued",
+      "category": "bundled-oauth-library"
+    },
+    {
+      "id": "broker-call-291",
+      "owner": "revokeTokenAndLogout",
+      "method": "POST",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 2625809,
+        "endOffsetUtf16": 2625843
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "apiRoot": null,
+      "resolution": "dynamic-or-shared-library; no concrete route catalogued",
+      "category": "bundled-oauth-library"
+    },
+    {
+      "id": "broker-call-292",
+      "owner": "revokeTokenAndLogout",
+      "method": "POST",
+      "source": {
+        "file": "main.779c58275dd244a2.js",
+        "url": "https://courtage.henner.com/main.779c58275dd244a2.js",
+        "sha256": "77b1feceee022657193679f31c7ec914290bc381158ab4e4e041ecb7d73df926",
+        "offsetUtf16": 2625944,
+        "endOffsetUtf16": 2625978
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "json (client default; unverified)",
+      "hasRequestBody": true,
+      "apiRoot": null,
+      "resolution": "dynamic-or-shared-library; no concrete route catalogued",
+      "category": "bundled-oauth-library"
+    },
+    {
+      "id": "broker-call-318",
+      "owner": "getDocumentByUrl",
+      "method": "GET",
+      "source": {
+        "file": "chunks/570.fe8f4ee3ecd748b8.js",
+        "url": "https://courtage.henner.com/570.fe8f4ee3ecd748b8.js",
+        "sha256": "c458cf2380864a535a55bd7d6189a54e8d8ad24e6ddee8231c2d87bdf7ff3535",
+        "offsetUtf16": 289521,
+        "endOffsetUtf16": 289597
+      },
+      "observedIn": "public-frontend-static-source",
+      "executed": false,
+      "responseType": "blob",
+      "hasRequestBody": false,
+      "fullHttpResponse": true,
+      "withCredentials": true,
+      "apiRoot": null,
+      "resolution": "dynamic-or-shared-library; no concrete route catalogued",
+      "category": "runtime-resource-url"
+    }
+  ]
+}

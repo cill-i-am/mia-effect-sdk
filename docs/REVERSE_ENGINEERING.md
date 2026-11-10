@@ -18,6 +18,12 @@ administrator-management, contract, document and signature operations. These are
 frontend-observed contracts. Machine-token access, tenant entitlements and
 production compatibility have not been validated.
 
+Henner's employer and broker portals expose separate APIs. The
+[Henner investigation](HENNER_API.md) found explicit employer DSN-sheet
+consultation, download, and reissue operations. LYA's stored insurer references
+and payroll-information generator do not establish that these downstream Henner
+requirements are covered by a MIA API account.
+
 The official [MIA case study](https://www.lyaprotect.com/ressources/cas-usage/mia-assurances)
 describes a collective-insurance process that includes quote documents,
 application signature, final contract documents and transmission to an
@@ -59,7 +65,7 @@ manually editable or temporarily populated; reconcile state as well as the value
 | Field | Meaning established by the UI |
 | --- | --- |
 | `numeroInterne` | LYA internal contract ID |
-| `numeroCompagnie` | Insurer contract/policy number |
+| `numeroCompagnie` | Editable insurer contract/policy reference stored in LYA |
 | `assureNumero` | Insurer customer or insured reference |
 | `adhesionNumero` | Membership reference |
 | `risqueDetaille.delegataireNumero` | Administrator reference |
@@ -70,6 +76,7 @@ Contract read is `GET /courtage/contrat/lire/{contractId}`. Contract search is
 `POST /courtage/contrat/rechercher` with `criteres`, `pageNumero`, `nbParPage` and
 `ordres`; the UI consumes `content` and `totalElements`. The field `contratLie` is
 not treated as an insurer policy number: its meaning is overloaded across callers.
+Automatic population from Henner and final policy issuance remain unverified.
 
 ## Payroll setup sheets
 
@@ -101,6 +108,11 @@ link. These routes are not interchangeable.
 Neither document's content was downloaded. A payroll-information/setup document
 is established; a standardized DSN setup file, its fields and its compliance
 requirements are not.
+
+In particular, equivalence to Henner's DSN/FPOC sheet has not been established.
+LYA's linked Henner HR guide describes that sheet in a separate employer portal,
+and its current frontend exposes dedicated DSN operations. See the
+[Henner setup-sheet evidence](HENNER_API.md#retrieve-henners-dsn-setup-sheet).
 
 ## Signatures and workflow order
 
