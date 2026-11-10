@@ -1,0 +1,413 @@
+{
+  "metadata": {
+    "source": "index-CV_sfL5W.js",
+    "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+    "offsetConvention": "zero-based JavaScript UTF-16 string offsets",
+    "parser": "acorn 8.19.0",
+    "nodeCount": 4062628,
+    "sourceUrl": "https://app.lyaprotect.com/assets/index-CV_sfL5W.js",
+    "verification": "Static source extraction only. Application JavaScript was parsed, never executed; no business endpoint was called.",
+    "schemaScope": "Frontend defaults and validation rules, not authoritative server schemas, requiredness or access rights."
+  },
+  "literalCount": 7,
+  "literals": [
+    {
+      "value": "projetDevisDTO",
+      "sourceOffsets": [
+        2245972,
+        2246715,
+        9939992
+      ],
+      "evidence": "Exact DTO-like string literal; schema and accepted server usage require the surrounding client call."
+    },
+    {
+      "value": "dateBorneDTO",
+      "sourceOffsets": [
+        7889728,
+        7890802
+      ],
+      "evidence": "Exact DTO-like string literal; schema and accepted server usage require the surrounding client call."
+    },
+    {
+      "value": "projetDevisContratActuelDTO",
+      "sourceOffsets": [
+        9940039,
+        15077809,
+        15078131,
+        15084271
+      ],
+      "evidence": "Exact DTO-like string literal; schema and accepted server usage require the surrounding client call."
+    },
+    {
+      "value": "projetDevisContratActuelCollectifDTO",
+      "sourceOffsets": [
+        9940108,
+        17002369,
+        17002657
+      ],
+      "evidence": "Exact DTO-like string literal; schema and accepted server usage require the surrounding client call."
+    },
+    {
+      "value": "projetDevisContratActuelMRIDTO",
+      "sourceOffsets": [
+        9940180,
+        14655585,
+        14691772,
+        14694282,
+        14696192,
+        14702861,
+        14703013,
+        14706858,
+        14707012
+      ],
+      "evidence": "Exact DTO-like string literal; schema and accepted server usage require the surrounding client call."
+    },
+    {
+      "value": "projetDevisSelectionneDTO",
+      "sourceOffsets": [
+        9940241
+      ],
+      "evidence": "Exact DTO-like string literal; schema and accepted server usage require the surrounding client call."
+    },
+    {
+      "value": "projetSyntheseDevisDTO",
+      "sourceOffsets": [
+        9940294
+      ],
+      "evidence": "Exact DTO-like string literal; schema and accepted server usage require the surrounding client call."
+    }
+  ],
+  "discriminatorMaps": [
+    {
+      "id": "TYPE_CLIENT@2173280",
+      "name": "TYPE_CLIENT",
+      "topLevel": true,
+      "scopeFunction": null,
+      "sourceStart": 2173280,
+      "sourceEnd": 2173331,
+      "kind": "object-map",
+      "value": {
+        "kind": "object",
+        "properties": [
+          {
+            "name": "ENTREPRISE",
+            "computed": false,
+            "value": {
+              "kind": "literal",
+              "value": "entreprise"
+            }
+          },
+          {
+            "name": "PARTICULIER",
+            "computed": false,
+            "value": {
+              "kind": "literal",
+              "value": "particulier"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "PersonneType@2268104",
+      "name": "PersonneType",
+      "topLevel": true,
+      "scopeFunction": null,
+      "sourceStart": 2268104,
+      "sourceEnd": 2268252,
+      "kind": "compiled-discriminator-enum",
+      "members": [
+        {
+          "name": "personnePhysique",
+          "value": "personnePhysique",
+          "sourceOffset": 2268109
+        },
+        {
+          "name": "personneMorale",
+          "value": "personneMorale",
+          "sourceOffset": 2268147
+        },
+        {
+          "name": "organisationInformelle",
+          "value": "organisationInformelle",
+          "sourceOffset": 2268181
+        }
+      ]
+    },
+    {
+      "id": "ClientType@8161826",
+      "name": "ClientType",
+      "topLevel": true,
+      "scopeFunction": null,
+      "sourceStart": 8161826,
+      "sourceEnd": 8161954,
+      "kind": "compiled-discriminator-enum",
+      "members": [
+        {
+          "name": "particulier",
+          "value": "particulier",
+          "sourceOffset": 8161831
+        },
+        {
+          "name": "entreprise",
+          "value": "entreprise",
+          "sourceOffset": 8161859
+        },
+        {
+          "name": "organisationInformelle",
+          "value": "organisationInformelle",
+          "sourceOffset": 8161885
+        }
+      ]
+    },
+    {
+      "id": "TypeProjetDevis@9939970",
+      "name": "TypeProjetDevis",
+      "topLevel": true,
+      "scopeFunction": null,
+      "sourceStart": 9939970,
+      "sourceEnd": 9940343,
+      "kind": "compiled-discriminator-enum",
+      "members": [
+        {
+          "name": "projetDevisDTO",
+          "value": "projetDevisDTO",
+          "sourceOffset": 9939975
+        },
+        {
+          "name": "projetDevisContratActuelDTO",
+          "value": "projetDevisContratActuelDTO",
+          "sourceOffset": 9940009
+        },
+        {
+          "name": "projetDevisContratActuelCollectifDTO",
+          "value": "projetDevisContratActuelCollectifDTO",
+          "sourceOffset": 9940069
+        },
+        {
+          "name": "projetDevisContratActuelMRIDTO",
+          "value": "projetDevisContratActuelMRIDTO",
+          "sourceOffset": 9940147
+        },
+        {
+          "name": "projetDevisSelectionneDTO",
+          "value": "projetDevisSelectionneDTO",
+          "sourceOffset": 9940213
+        },
+        {
+          "name": "projetSyntheseDevisDTO",
+          "value": "projetSyntheseDevisDTO",
+          "sourceOffset": 9940269
+        }
+      ]
+    },
+    {
+      "id": "TYPE_PERSONNE@13442497",
+      "name": "TYPE_PERSONNE",
+      "topLevel": true,
+      "scopeFunction": null,
+      "sourceStart": 13442497,
+      "sourceEnd": 13442535,
+      "kind": "object-map",
+      "value": {
+        "kind": "object",
+        "properties": [
+          {
+            "name": "PERSONNE_PHYSIQUE",
+            "computed": false,
+            "value": {
+              "kind": "literal",
+              "value": "personnePhysique"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "typeGuards": [
+    {
+      "id": "isInterlocuteur@14524424",
+      "name": "isInterlocuteur",
+      "topLevel": true,
+      "scopeFunction": null,
+      "sourceStart": 14524424,
+      "sourceEnd": 14524469,
+      "tests": [
+        {
+          "operator": "===",
+          "expression": "e?.type===\"INTERLOCUTEUR:INTERVENANT_TYPE\"",
+          "discriminator": "INTERLOCUTEUR:INTERVENANT_TYPE",
+          "sourceOffset": 14524427
+        }
+      ]
+    },
+    {
+      "id": "isProduitReferentielDTO@14907419",
+      "name": "isProduitReferentielDTO",
+      "topLevel": true,
+      "scopeFunction": null,
+      "sourceStart": 14907419,
+      "sourceEnd": 14907445,
+      "tests": [
+        {
+          "operator": "===",
+          "expression": "e?.type===\"referentiel\"",
+          "discriminator": "referentiel",
+          "sourceOffset": 14907422
+        }
+      ]
+    }
+  ],
+  "templateTypeFields": [
+    {
+      "template": "TEMPLATE$4C",
+      "value": "interlocuteur",
+      "sourceOffset": 7000598,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$4C",
+      "value": "personnePhysique",
+      "sourceOffset": 7000670,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$4B",
+      "value": "interlocuteur",
+      "sourceOffset": 7012183,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$4B",
+      "value": "personnePhysique",
+      "sourceOffset": 7012292,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$4A",
+      "value": "personnePhysique",
+      "sourceOffset": 7061971,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$4z",
+      "value": "personnePhysique",
+      "sourceOffset": 7085710,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$4q",
+      "value": "",
+      "sourceOffset": 11031315,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$4n",
+      "value": "personnePhysique",
+      "sourceOffset": 11127394,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$4c",
+      "value": "personnePhysique",
+      "sourceOffset": 11332348,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$4a",
+      "value": "personnePhysique",
+      "sourceOffset": 11367670,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$3H",
+      "value": "personnePhysique",
+      "sourceOffset": 12269915,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$3q",
+      "value": "personneMorale",
+      "sourceOffset": 12480904,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$2$",
+      "value": "personnePhysique",
+      "sourceOffset": 13284831,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$2Y",
+      "value": "personneMorale",
+      "sourceOffset": 13334218,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$2T",
+      "value": "autre",
+      "sourceOffset": 13453310,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$2C",
+      "value": "portefeuille",
+      "sourceOffset": 14653825,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$2A",
+      "value": "portefeuille",
+      "sourceOffset": 14705802,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$26",
+      "value": "portefeuille",
+      "sourceOffset": 15076016,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$25",
+      "value": "portefeuille",
+      "sourceOffset": 15083634,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE_DEVIS",
+      "value": "portefeuille",
+      "sourceOffset": 15371698,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$1J",
+      "value": "portefeuille",
+      "sourceOffset": 15916266,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$1I",
+      "value": "portefeuille",
+      "sourceOffset": 15993438,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$11",
+      "value": "personneMorale",
+      "sourceOffset": 16653848,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$h",
+      "value": "portefeuille",
+      "sourceOffset": 16998840,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    },
+    {
+      "template": "TEMPLATE$f",
+      "value": "personnePhysique",
+      "sourceOffset": 17106959,
+      "confidence": "Literal type field in a frontend initial-values template; accepted server discriminator not established by itself."
+    }
+  ]
+}

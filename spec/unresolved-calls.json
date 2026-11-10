@@ -1,0 +1,522 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-10T19:35:34.451Z",
+  "sourceManifest": "source-manifest.json",
+  "count": 35,
+  "limitations": [
+    "No endpoints are invented for these calls. Many are generic transports, third-party library fetches, returned download URLs, or unsupported dynamic constructions."
+  ],
+  "calls": [
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 1504,
+      "callee": "fetch",
+      "function": "o",
+      "argumentExpressions": [
+        "l.href",
+        "u"
+      ],
+      "reason": "HTTP method is dynamic or not recoverable",
+      "method": null
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 565110,
+      "callee": "fetch",
+      "function": "fetchAndDecodeViaTurboStream",
+      "argumentExpressions": [
+        "o",
+        "await createRequestInit(n)"
+      ],
+      "reason": "HTTP method is dynamic or not recoverable",
+      "method": null
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 581394,
+      "callee": "fetch",
+      "function": "fetchAndApplyManifestPatches",
+      "argumentExpressions": [
+        "C",
+        "{signal:f}"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "C"
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 1926149,
+      "callee": "fetch",
+      "function": "p",
+      "argumentExpressions": [
+        "E",
+        "{...m,headers:h}"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "E"
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 1926183,
+      "callee": "fetchEventSource",
+      "function": "useLyaEventStream",
+      "argumentExpressions": [
+        "n",
+        "{signal:l.signal,openWhenHidden:!0,fetch:p,onopen(E){if(l.signal.aborted)return Promise.resolve();if(E.status===401)return t.current.getFreshToken.invalidate?.(),Promise.reject(new RetriableError(\"Unauthorized – token invalidated, reconnecting\"));const m=E.headers.get(\"content-type\")??\"\";return!E.ok||!m.includes(\"text/event-stream\")?Promise.reject(new RetriableError(`Unexpected response: ${E.status} ${m}`)):(u=INITIAL_BACKOFF_MS,t.current.onConnect?.(),Promise.resolve())},onmessage(E){const m=E.event;if(!m||!SSE_EVENT_NAMES.has(m))return;let f;try{f=JSON.parse(E.data)}catch{f=E.data}t.current.onEvent(m,f)},onclose(){throw new RetriableError(\"Stream closed by server\")},onerror(E){if(E instanceof FatalError)throw E;const m=Math.min(u,MAX_BACKOFF_MS)+Math.random()*1e3;return u=Math.min(u*2,MAX_BACKOFF_MS),m}}"
+      ],
+      "reason": "Dynamic or generic transport; no concrete business route inferred"
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 2143502,
+      "callee": "fetch",
+      "function": "downloadFileFromFront",
+      "argumentExpressions": [
+        "e"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "e"
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 2374526,
+      "callee": "fetch",
+      "function": "MsgViewer",
+      "argumentExpressions": [
+        "e"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "e"
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 4802319,
+      "callee": "fetch",
+      "function": "TIFFViewer",
+      "argumentExpressions": [
+        "e"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "e"
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 4809329,
+      "callee": "fetch",
+      "function": "ke",
+      "argumentExpressions": [
+        "M"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "M"
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 6918493,
+      "callee": "fetch",
+      "function": "fetchFileFromUrl",
+      "argumentExpressions": [
+        "e"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "e"
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 7096201,
+      "callee": "fetchFile",
+      "function": "readExternalUrlDocument",
+      "argumentExpressions": [
+        "e",
+        "\"GET\"",
+        "null",
+        "!1"
+      ],
+      "reason": "Whole URL is dynamic; a wildcard service endpoint would be invented",
+      "method": "GET",
+      "urlExpression": "e"
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 7100340,
+      "callee": "fetch",
+      "function": "searchAddress",
+      "argumentExpressions": [
+        "E"
+      ],
+      "reason": "External or unrecognized origin; never attach integration credentials",
+      "method": "GET",
+      "resolvedUrl": "https://data.geopf.fr/geocodage/completion/?text=@@P0@@&type=StreetAddress&maximumResponses=@@P1@@",
+      "external": true
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 8201343,
+      "callee": "fetch",
+      "function": "V",
+      "argumentExpressions": [
+        "Ie"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "Ie"
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 8232189,
+      "callee": "fetch",
+      "function": "imageEnBase64",
+      "argumentExpressions": [
+        "e"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "e"
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 10359477,
+      "callee": "fetch",
+      "function": "ee",
+      "argumentExpressions": [
+        "Ee"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "Ee"
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 10898001,
+      "callee": "fetch",
+      "function": "depuisUrl",
+      "argumentExpressions": [
+        "t"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "t"
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 10909587,
+      "callee": "fetch",
+      "function": "NewAddCollaborateurDialog",
+      "argumentExpressions": [
+        "Rr.url",
+        "{signal:lr}"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "Rr.url"
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 14028751,
+      "callee": "fetch",
+      "function": "fetchData",
+      "argumentExpressions": [
+        "e"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "e"
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 14220162,
+      "callee": "fetch",
+      "function": "constructor",
+      "argumentExpressions": [
+        "l",
+        "createFetchOptions(o,this._withCredentials,this._abortController)"
+      ],
+      "reason": "HTTP method is dynamic or not recoverable",
+      "method": null
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 14221861,
+      "callee": "fetch",
+      "function": "constructor",
+      "argumentExpressions": [
+        "p",
+        "createFetchOptions(u,this._withCredentials,this._abortController)"
+      ],
+      "reason": "HTTP method is dynamic or not recoverable",
+      "method": null
+    },
+    {
+      "sourceId": "main",
+      "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+      "offsetUtf16": 17709274,
+      "callee": "fetch",
+      "function": "ae",
+      "argumentExpressions": [
+        "m"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "m"
+    },
+    {
+      "sourceId": "customer-3rn5xu1nx1tsv",
+      "sourceSha256": "b1612777977a925f65310c39947c47b38010531cd28657b5511952139e93e40e",
+      "offsetUtf16": 69934,
+      "callee": "fetch",
+      "function": "n",
+      "argumentExpressions": [
+        "e",
+        "t"
+      ],
+      "reason": "HTTP method is dynamic or not recoverable",
+      "method": null
+    },
+    {
+      "sourceId": "customer-1zng6mlg4e5z_",
+      "sourceSha256": "e6576951ac98e3c7085872fe35509271db1a181841bc98e068904affa03389e0",
+      "offsetUtf16": 17997,
+      "callee": "0,r.createServerReference",
+      "function": "anonymous@17944",
+      "argumentExpressions": [
+        "\"40dc718a805f72f3d816e69777850c98581dbb4a28\"",
+        "r.callServer",
+        "void 0",
+        "r.findSourceMapURL",
+        "\"login\""
+      ],
+      "reason": "Next.js server-action reference, not a stable REST endpoint"
+    },
+    {
+      "sourceId": "adhesion",
+      "sourceSha256": "6e7be60ddca43ddb47e9cd2acc98da28d2bcd666999d44cfc091e4d4295e512f",
+      "offsetUtf16": 1397,
+      "callee": "fetch",
+      "function": "r",
+      "argumentExpressions": [
+        "s.href",
+        "o"
+      ],
+      "reason": "HTTP method is dynamic or not recoverable",
+      "method": null
+    },
+    {
+      "sourceId": "adhesion",
+      "sourceSha256": "6e7be60ddca43ddb47e9cd2acc98da28d2bcd666999d44cfc091e4d4295e512f",
+      "offsetUtf16": 227866,
+      "callee": "fetch",
+      "function": "upload",
+      "argumentExpressions": [
+        "d",
+        "{...o,method:\"POST\",headers:u,body:n}"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "POST",
+      "urlExpression": "d"
+    },
+    {
+      "sourceId": "adhesion",
+      "sourceSha256": "6e7be60ddca43ddb47e9cd2acc98da28d2bcd666999d44cfc091e4d4295e512f",
+      "offsetUtf16": 229540,
+      "callee": "fetch",
+      "function": "request",
+      "argumentExpressions": [
+        "u",
+        "{...o,method:n,headers:d}"
+      ],
+      "reason": "HTTP method is dynamic or not recoverable",
+      "method": null
+    },
+    {
+      "sourceId": "adhesion",
+      "sourceSha256": "6e7be60ddca43ddb47e9cd2acc98da28d2bcd666999d44cfc091e4d4295e512f",
+      "offsetUtf16": 721233,
+      "callee": "fetch",
+      "function": "$H",
+      "argumentExpressions": [
+        "o"
+      ],
+      "reason": "External or unrecognized origin; never attach integration credentials",
+      "method": "GET",
+      "resolvedUrl": "https://data.geopf.fr/geocodage/completion/?text=@@P0@@&type=StreetAddress&maximumResponses=@@P1@@",
+      "external": true
+    },
+    {
+      "sourceId": "adhesion",
+      "sourceSha256": "6e7be60ddca43ddb47e9cd2acc98da28d2bcd666999d44cfc091e4d4295e512f",
+      "offsetUtf16": 798193,
+      "callee": "fetch",
+      "function": "cZ",
+      "argumentExpressions": [
+        "t"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "t"
+    },
+    {
+      "sourceId": "adhesion",
+      "sourceSha256": "6e7be60ddca43ddb47e9cd2acc98da28d2bcd666999d44cfc091e4d4295e512f",
+      "offsetUtf16": 889776,
+      "callee": "fetch",
+      "function": "RX",
+      "argumentExpressions": [
+        "e"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "e"
+    },
+    {
+      "sourceId": "generalForms",
+      "sourceSha256": "a8f0d434bacead1d86f63535117cbed86332f75d1a88c7faf0ec3a1dfd9da058",
+      "offsetUtf16": 1150,
+      "callee": "fetch",
+      "function": "r",
+      "argumentExpressions": [
+        "a.href",
+        "i"
+      ],
+      "reason": "HTTP method is dynamic or not recoverable",
+      "method": null
+    },
+    {
+      "sourceId": "generalForms",
+      "sourceSha256": "a8f0d434bacead1d86f63535117cbed86332f75d1a88c7faf0ec3a1dfd9da058",
+      "offsetUtf16": 1640779,
+      "callee": "fetch",
+      "function": "sx",
+      "argumentExpressions": [
+        "e",
+        "t"
+      ],
+      "reason": "HTTP method is dynamic or not recoverable",
+      "method": null
+    },
+    {
+      "sourceId": "generalForms",
+      "sourceSha256": "a8f0d434bacead1d86f63535117cbed86332f75d1a88c7faf0ec3a1dfd9da058",
+      "offsetUtf16": 1760994,
+      "callee": "fetch",
+      "function": "s4e",
+      "argumentExpressions": [
+        "v"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "v"
+    },
+    {
+      "sourceId": "generalForms",
+      "sourceSha256": "a8f0d434bacead1d86f63535117cbed86332f75d1a88c7faf0ec3a1dfd9da058",
+      "offsetUtf16": 1761644,
+      "callee": "fetch",
+      "function": "s4e",
+      "argumentExpressions": [
+        "v"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "v"
+    },
+    {
+      "sourceId": "generalForms",
+      "sourceSha256": "a8f0d434bacead1d86f63535117cbed86332f75d1a88c7faf0ec3a1dfd9da058",
+      "offsetUtf16": 1761718,
+      "callee": "fetch",
+      "function": "s4e",
+      "argumentExpressions": [
+        "v"
+      ],
+      "reason": "Relative or dynamic URL with no proven service base",
+      "method": "GET",
+      "urlExpression": "v"
+    },
+    {
+      "sourceId": "supplied-postman",
+      "sourceSha256": "929dd79d884b2e19db7a3a87d9654bfb94f582a91b63a826b908247ae2e34417",
+      "jsonPointer": "/event",
+      "callee": "pm.sendRequest",
+      "function": "collection pre-request token exchange",
+      "method": "POST",
+      "reason": "identityUrl variable is unset in the supplied collection; no authentication URL is invented",
+      "argumentExpressions": [
+        "pm.variables.get('identityUrl')"
+      ],
+      "requestBody": {
+        "encoding": "json",
+        "observedFields": [
+          "clientId",
+          "clientSecret"
+        ],
+        "valuesOmitted": true
+      },
+      "responseSelection": "body.token"
+    }
+  ],
+  "exclusions": [
+    {
+      "sourceId": "main",
+      "offsetUtf16": 2312840,
+      "callee": "fetch",
+      "reason": "generic-transport-implementation"
+    },
+    {
+      "sourceId": "main",
+      "offsetUtf16": 2313523,
+      "callee": "fetch",
+      "reason": "generic-transport-implementation"
+    },
+    {
+      "sourceId": "main",
+      "offsetUtf16": 2313837,
+      "callee": "fetch",
+      "reason": "generic-transport-implementation"
+    },
+    {
+      "sourceId": "main",
+      "offsetUtf16": 2314194,
+      "callee": "simpleApiFetchWithCredential",
+      "reason": "generic-transport-implementation"
+    },
+    {
+      "sourceId": "main",
+      "offsetUtf16": 2314550,
+      "callee": "fetch",
+      "reason": "generic-transport-implementation"
+    },
+    {
+      "sourceId": "main",
+      "offsetUtf16": 2314892,
+      "callee": "simpleApiFetchWithCredential",
+      "reason": "generic-transport-implementation"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "source": "index-CV_sfL5W.js",
+    "sourceSha256": "9142abca7640ea3162eaa1ca9a8dcefb631fa7236ffb547ce4515409486c709d",
+    "offsetConvention": "zero-based JavaScript UTF-16 string offsets",
+    "parser": "acorn 8.19.0",
+    "nodeCount": 4062628,
+    "sourceUrl": "https://app.lyaprotect.com/assets/index-CV_sfL5W.js",
+    "verification": "Static source extraction only. Application JavaScript was parsed, never executed; no business endpoint was called.",
+    "schemaScope": "Frontend defaults and validation rules, not authoritative server schemas, requiredness or access rights."
+  },
+  "counts": {
+    "enumObjects": 99,
+    "codeCategories": 80,
+    "templates": 306,
+    "yupSchemas": 425,
+    "inlineFormSchemas": 251,
+    "customYupMethods": 24,
+    "formTemplateAssociations": 221,
+    "dtoLiteralTypes": 7,
+    "discriminatorMaps": 5,
+    "typeGuardDefinitions": 2,
+    "templateTypeFields": 25,
+    "servicePrefixConstants": 80,
+    "parseErrors": 0
+  },
+  "methodology": [
+    "Consumed Acorn declaration/function index of the full public bundle.",
+    "Parsed selected initializer expressions only; no application code was executed.",
+    "Enum inventory includes named top-level object constants or compiled enum IIFEs containing literal CODE:CATEGORY server-style values.",
+    "Template inventory preserves exact default structures and references, excluding the editor toolbar/base-format constants.",
+    "Yup inventory includes named global and local direct schema builders and factories; chained method order, arguments and conditions are preserved.",
+    "Inline form validationSchema props are separately structured when directly built with Yup.",
+    "Custom Yup extensions are parsed from addMethod calls, without executing definitions.",
+    "Associations require validationSchema and initialValues in the same parsed props object.",
+    "DTO inventory separates observed string literals, discriminator maps, type-guard predicates, and template type fields.",
+    "No value inferred from a UI default or UI validator is labelled a server requirement."
+  ],
+  "limitations": [
+    "Dynamic schemas created from server-provided metadata, code-list values returned by APIs and runtime feature choices are not recoverable statically.",
+    "Aliased/computed objects are preserved as references or expressions rather than executed.",
+    "Anonymous validators outside identifiable form-prop objects are not separately inventoried.",
+    "Enum inventory is scoped to CODE:CATEGORY code-bearing constants; untagged application enums and vendor/library enums are outside this file, except selected DTO discriminator maps.",
+    "The inventory is specific to the fetched hashed main bundle; additional app assets require a separate pass."
+  ],
+  "errors": []
+}

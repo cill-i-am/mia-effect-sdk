@@ -1,0 +1,16 @@
+node_modules/
+dist/
+dist-test/
+coverage/
+.cache/
+.env
+.env.*
+!.env.example
+*.log
+*.tgz
+*.zip
+*.har
+source-downloads/
+raw-sources/
+postman-private/
+.DS_Store
