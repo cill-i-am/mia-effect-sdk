@@ -1,61 +1,192 @@
 # MIA Effect SDK
 
-An **Effect 4 TypeScript SDK for MIA / LYA**, following the operation-oriented
-approach of [Distilled](https://distilled.cloud/).
+Use TypeScript and Effect 4 to price insurance, start a quote's subscription,
+read policy references, and generate payroll setup sheets through MIA / LYA.
+The SDK provides named operations, runtime schemas, typed failures, and injectable
+HTTP and credential services. Its operation-based design follows
+[Distilled](https://distilled.cloud/).
 
-This is an initial integration SDK built from the supplied MIA Postman collection
-and interfaces recovered from public LYA application assets. It is not an official
-MIA, LYA or Distilled package. Its transport and fixtures are tested; live
-authentication, tenant permissions and insurance transactions require validation
-against an authorized MIA/LYA environment.
+The SDK combines the supplied MIA Postman collection with interfaces recovered
+from public LYA application code. It is an unofficial integration package.
+Local tests verify the SDK's behavior with mocks and sanitized fixtures. Access
+with MIA credentials, completed insurance purchases, and generated document
+contents still need validation in an authorized test environment.
 
-## What is included
+## Supported insurance operations
 
-| Surface | Contents |
+The SDK includes the three operations needed to move from a quote toward an
+insurance scheme and its documents:
+
+| Task | SDK entry point | Result |
+| --- | --- | --- |
+| [Purchase insurance](#purchase-insurance) | `Quotes.subscribeWithInsurer(quoteNumber)` | Starts the insurer subscription action; read quote state to establish the outcome |
+| [Retrieve a policy number](#retrieve-a-policy-number) | `Contracts.read(contractId)` | Returns a contract whose `numeroCompagnie` may contain the insurer policy reference |
+| [Get a scheme setup sheet](#get-a-scheme-setup-sheet) | `Documents.generatePayrollSheet(projectNumber)` or `Documents.generateEnterprisePayrollSheet(quoteNumber)` | Generates a payroll setup/information sheet and provides a filename or document URL |
+
+These calls return lazy Effects. A request runs when you execute the Effect with
+a configured client. The [setup example](#get-started) shows how to provide one.
+
+### Purchase insurance
+
+To start the insurer subscription action for a selected quote, call
+`Quotes.subscribeWithInsurer(quoteNumber)`. It sends this request on the
+`platform` service:
+
+```http
+GET /lyaptf/api/scrapping/projet/souscrire/{quoteNumber}/false
+```
+
+`quoteNumber` is the selected quote's `numeroInterne`, represented by
+`Schemas.QuoteNumber`. It is distinct from the project number and the encoded
+project ID used by the Postman integration.
+
+The launch response has no established result schema, so the SDK returns
+`unknown`. The application reloads the quotes to inspect subscription state.
+Use `Quotes.read(quoteNumber)` or `Quotes.listForProject(projectNumber)` to read
+that state; successful request completion alone does not establish policy
+issuance.
+
+The SDK exposes the surrounding operations separately:
+
+| Action | SDK method |
 | --- | --- |
-| Curated SDK | **58 operations** across pricing/projects, quotes, subscription, contracts, documents, customers, reference data, tasks and signatures |
-| Observed API catalogue | **1,707 operation variants**, representing **1,696 distinct method/path pairs**; query and response variants are retained |
-| Generated callable surface | **1,628 request mappings** and **35 streaming mappings**, with typed parameter slots and explicit wire bodies |
-| Remaining evidence | **44 catalogue-only variants** and **35 unresolved call sites**, with reasons instead of invented signatures |
-| Frontend metadata | 99 code-bearing constants, 80 code categories, 306 templates, 425 named and 251 inline UI validation schemas |
-| Runtime | Native Effect HttpClient, Layers, typed failures, runtime schemas, redacted credentials, tracing, cancellation, NDJSON and byte streams |
+| Choose the quote | `Quotes.choose(quoteNumber)` |
+| Enter the subscription stage | `Projects.enterSubscription(projectNumber)` |
+| Initialize or save application details | `Projects.initializeSubscription(projectNumber)` / `Projects.saveSubscription(projectNumber, subscription)` |
+| Validate or transmit the subscription | `Projects.validateSubscription(projectNumber)` / `Projects.transmitSubscription(projectNumber, isUsingWebApp)` |
+| Create the adhesion signature procedure | `Signatures.createForAdhesion(projectNumber)` |
+| Start administrator activation | `Quotes.activateAdministrator(quoteNumber, comments)` |
+| Create or link the internal contract | `Projects.transformToContract(projectNumber, transformation)` |
 
-The curated operations overlap the catalogue; the two counts should not be added.
-The broad catalogue describes the observed LYA applications, which are wider
-than MIA's supplied integration collection. A callable mapping means the SDK can
-construct the observed request; it does not establish authorization or successful
-server acceptance.
+This table lists available actions, not a fixed execution sequence. Product and
+tenant configuration determine the required details, signatures, and order.
+`transformToContract` can create or link an internal LYA record using an entered
+insurer reference; it does not independently establish carrier acceptance.
 
-## Develop and verify
+Quote choice and insurer subscription use **GET requests that change state**.
+The SDK does not retry business requests or replay them after authentication.
+Read the [subscription and signature findings](docs/REVERSE_ENGINEERING.md)
+and [action/retry decision](docs/adr/0003-actions-and-retries.md) before composing
+a product workflow.
 
-Use Node 24+ and the pnpm version pinned in `package.json`.
+### Retrieve a policy number
+
+To read a contract, call `Contracts.read(contractId)`. It sends this request on
+the `platform` service:
+
+```http
+GET /lyaptf/api/courtage/contrat/lire/{contractId}
+```
+
+Pass the internal LYA contract ID as `contractId`. Read the insurer policy
+reference from **`contract.numeroCompagnie`** in the SDK result. The equivalent
+field in the HTTP response is `body.numeroCompagnie`; the SDK unwraps `body`.
+Check for an absent, `null`, or empty value before using the reference.
+
+The contract carries several identifiers with different purposes:
+
+| Field | Meaning |
+| --- | --- |
+| `numeroInterne` | Internal LYA contract ID, used in the read URL |
+| `numeroCompagnie` | Insurer policy/contract reference |
+| `adhesionNumero` | Membership or enrollment reference |
+| `assureNumero` | Insurer's reference for the insured |
+| `risqueDetaille.delegataireNumero` | Administrator reference |
+
+If you need to locate the contract, use `Contracts.search(request)`, which returns
+`content` and `totalElements`. `Contracts.listForCustomer(customerNumber)` also
+exists, but its response shape remains `unknown`. An entered policy reference
+can be temporary; confirm the contract's state as well as its reference.
+See the [contract API reference](docs/CURATED_API.md#contracts).
+
+### Get a scheme setup sheet
+
+The recovered document type is a payroll setup/information sheet, called
+**Fiche Information paie** in the main application. Two flows generate it.
+Use the flow supported by your tenant and product.
+
+#### Generate from a project
+
+Configure both `platform` and `ged` before using this flow. Their API roots
+include `/lyaptf/api` and `/lyaGed/api`, respectively. Assign an authorized
+credential to each service explicitly.
+
+1. Call `Documents.generatePayrollSheet(projectNumber)` with the internal
+   project number. The helper sends `POST /lyaptf/api/documents/generer` with
+   the payload below.
+2. If the result contains a nonempty `fileName`, pass it unchanged to
+   `Documents.resolveDownload(fileName)`. If it does not, handle the missing
+   filename before requesting a download. The resolver sends the filename as
+   raw text to `POST /lyaGed/api/documents/download/NULL` and returns
+   `{ value: downloadUrl }`.
+
+The generation helper supplies this payload, with `PROJECT_NUMBER` replaced by
+your internal project number:
+
+```json
+{
+  "stockage": false,
+  "typeDocument": "FICHE_PARAMETRAGE_PAIE:TYPE_DOCUMENT_GENERE",
+  "typeNumero": "PROJET_NUMERO",
+  "numero": "PROJECT_NUMBER",
+  "test": false
+}
+```
+
+Use the returned URL to retrieve the document. In the inspected main application,
+the button appears for collective projects with a selected quote, an enabled
+tenant feature, and insurer code `1SURE` or `CIPRES`.
+
+#### Generate from the enterprise flow
+
+Call `Documents.generateEnterprisePayrollSheet(quoteNumber)`. It sends this
+request on the `platform` service and returns `{ value: documentUrl }` directly:
+
+```http
+GET /lyaptf/api/assure/projet/parcours/genererFicheParametragePaie/{quoteNumber}
+```
+
+Despite `projet` in the URL, the caller passes the **selected quote's
+`numeroInterne`**, not the project number.
+
+No generated document was inspected. These routes establish payroll setup-sheet
+functionality, but do not establish that the output is the exact insurer-issued
+scheme sheet or a standardized setup file for DSN payroll reporting. Verify that
+the document meets your integration's requirements. See the
+[payroll document evidence](docs/REVERSE_ENGINEERING.md#payroll-setup-sheets).
+
+## Get started
+
+Use Node 24 or later and the pnpm version pinned in `package.json`. The package
+lives in `packages/sdk` and is named `@mia/sdk`. It is private and unpublished;
+consume it as a workspace dependency or a local tarball.
+
+From this checkout, install dependencies and build the package:
 
 ```sh
 pnpm install --frozen-lockfile
-pnpm generate:check
-pnpm check
-pnpm test
 pnpm build
 ```
 
-The package is `packages/sdk`, named `@mia/sdk`. It is intentionally not published
-to npm by this repository. Use it as a workspace dependency, or build a local
-tarball:
+To use it outside the workspace, create a tarball and install the resulting file
+in your application:
 
 ```sh
-pnpm build
 pnpm --filter @mia/sdk pack --pack-destination ./artifacts
 ```
 
-Then install the resulting tarball and a compatible Effect 4 in your application.
-The library declares Effect as a peer dependency so it shares your application's
-Effect installation.
+Install a compatible Effect version alongside the SDK. The tested development
+version is Effect **4.1.2**, and the peer range is `^4.1.2`. Using a peer dependency
+lets the SDK share your application's Effect installation.
 
-## Read a project
+### Read a project
 
-The service base URL includes the API root. For example, a supplied platform
-prefix ending in `/lyaptf/api` is combined with `/v1/parcours/projet/...`.
-Configuration has no default production host.
+Set `MIA_PLATFORM_API_URL` to your tenant's complete platform API root, including
+`/lyaptf/api`. Set `MIA_TOKEN` to an authorized bearer token and
+`MIA_ENCODED_PROJECT_ID` to the integration project's encoded ID. The SDK has no
+default production host.
+
+This example reads a project with those settings:
 
 ```ts
 import { Config, Effect } from "effect";
@@ -79,15 +210,25 @@ const program = Effect.gen(function* () {
 const project = await Effect.runPromise(program);
 ```
 
-The equivalent read-only runnable example is in
+The same read-only example is in
 [`packages/sdk/examples/read-project.ts`](packages/sdk/examples/read-project.ts).
-After `pnpm test` compiles it, an explicitly configured environment can run
-`node packages/sdk/dist-test/examples/read-project.js`.
+After `pnpm test` compiles it, run it with your configured environment:
 
-### Machine credentials
+```sh
+node packages/sdk/dist-test/examples/read-project.js
+```
 
-The collection's pre-request script sends JSON `{clientId, clientSecret}` to the
-configured `identityUrl` and reads `body.token`. The SDK implements that contract:
+The SDK keeps encoded project IDs, project numbers, quote numbers, internal
+contract IDs, and insurer policy numbers as distinct types. Use the matching
+factory under `Schemas`; the factories validate nonempty strings and do not
+convert one identifier into another. See the
+[identifier reference](docs/CURATED_API.md#identifier-factories).
+
+### Configure machine credentials
+
+The Postman pre-request script sends JSON `{clientId, clientSecret}` to
+`identityUrl` and reads `body.token`. To use that flow, configure a machine
+credential with the complete token endpoint supplied for your tenant:
 
 ```ts
 import { Redacted } from "effect";
@@ -105,79 +246,63 @@ const MiaLive = makeMiaLayer(
 );
 ```
 
-The variables above are supplied by your application's configuration. The
-identity URL is the complete token endpoint, not an inferred OAuth path. The
-Postman environment does not specify its value or a token lifetime. Concurrent
-authentication shares a cached token; use `MiaCredentials.invalidate(name)` for
-explicit invalidation. A failed business request is never automatically replayed
-after authentication.
+Supply `platformApiUrl`, `exactTokenEndpoint`, `clientId`, and `clientSecret`
+through your application's configuration. The collection leaves the identity
+URL unset and does not document token lifetime. Concurrent authentication shares
+a cached token; use the `MiaCredentials` service's `invalidate(name)` method for
+explicit invalidation.
 
-Credentials are assigned to each service explicitly. A platform credential is
-not implicitly sent to document, signature, public-form or other service hosts.
-Use the service prefixes and authentication arrangements provided for your tenant.
+Assign credentials to each service. A `platform` credential is not implicitly
+sent to document, signature, public-form, or other service hosts. Use your
+tenant's service URLs and authentication arrangements when adding those services.
 
-## Curated services
+## API coverage
 
-Import a namespace from `@mia/sdk`, or a module such as
-`@mia/sdk/services/documents`.
+The curated SDK has **58 operations** across these namespaces:
 
 | Namespace | Main operations |
 | --- | --- |
 | `Parcours` | Price products, create a quote/project, read by encoded project ID |
-| `Projects` | Read state, initialize/save/validate/transmit subscription, manage administration, transform to an internal contract |
-| `Quotes` | Read/list, select proposals, choose a quote, start/control carrier subscription, activate an administrator |
+| `Projects` | Read state, manage subscription and administration, create/link an internal contract |
+| `Quotes` | Read/list, select proposals, choose a quote, start/control insurer subscription |
 | `Contracts` | Read/search/save, list for a customer, stream paginated search results |
-| `Documents` | Generate documents/payroll sheets, resolve downloads, list and validate project/contract documents |
+| `Documents` | Generate documents/setup sheets, resolve downloads, list and validate documents |
 | `Customers` | Create/read customers and search people/companies |
-| `Reference` | Insurers and supplied codification lookup |
-| `Tasks` | Save tasks while preserving the collection's unresolved literal field names |
-| `Signatures` | Project signature actions, procedure state, initiation/reminders/abandonment, proof and uploads |
+| `Reference` | List insurers and look up codifications |
+| `Tasks` | Save the observed task payload, including unresolved literal field names |
+| `Signatures` | Manage project signatures, procedures, signers, documents, and proof |
 
-See [`docs/CURATED_API.md`](docs/CURATED_API.md) for all methods, paths, request
-encodings and response types. Client decoder snapshots are in
-[`spec/curated-schema-snapshots.json`](spec/curated-schema-snapshots.json).
+Import a namespace from `@mia/sdk` or a module such as
+`@mia/sdk/services/documents`. The [curated API reference](docs/CURATED_API.md)
+lists every method, path, request encoding, and response type.
+[Schema snapshots](spec/curated-schema-snapshots.json) record the client decoders.
 
-### Policy numbers and payroll setup sheets
+The supplied Postman collection has **18 examples covering 10 business
+endpoints**. All 10 have curated SDK methods. Seven also appear in the inspected
+frontend: six direct route matches and one parameterized codification route.
+The three `/v1/parcours/` routes are supported from the collection; they were not
+independently found in the frontend.
 
-The SDK keeps these identifier domains separate:
+The broader catalogue combines both sources and records these counts:
 
-- `EncodedProjectId`: integration lookup identifier.
-- `ProjectNumber`: internal project workflow number.
-- `QuoteNumber`: a quote's `numeroInterne`.
-- `ContractId`: the internal LYA contract identifier.
-- `PolicyNumber`: `numeroCompagnie`, the insurer policy/contract reference.
+| Evidence | Coverage |
+| --- | --- |
+| Observed API catalogue | 1,707 operation variants; 1,696 distinct method/path pairs, retaining query and response variants |
+| Generated request/stream APIs | 1,628 request mappings and 35 streaming mappings |
+| Catalogue-only variants | 44 variants whose transport or parameters need more evidence |
+| Unresolved calls | 35 call sites with recorded reasons |
+| Frontend metadata | 99 code-bearing constants, 80 code categories, 306 templates, 425 named and 251 inline UI validation schemas |
 
-`Documents.generatePayrollSheet(projectNumber)` reproduces the main application's
-`FICHE_PARAMETRAGE_PAIE` document request. The separate
-`Documents.generateEnterprisePayrollSheet(quoteNumber)` takes the **selected
-quote's ID** and returns the enterprise document link.
-
-The payroll document content was not retrieved. These are observed setup/payroll
-document routes, not a claim that the output is a standardized DSN file.
-
-### Workflow actions
-
-Subscription, signature transmission, administrator activation and internal
-contract transformation are separate operations. Their order can vary by tenant
-and product. The SDK does not infer that transforming a record or receiving a
-policy-number field proves carrier acceptance.
-
-Some actions use **GET** upstream, including choosing a quote and initiating
-carrier subscription. All SDK operations execute without automatic retries. See
-[`ADR 0003`](docs/adr/0003-actions-and-retries.md).
-
-### Pagination
-
-`Contracts.stream(search)` returns an Effect `Stream<Contract, MiaError, MiaClient>`
-and requests pages as needed. It uses the observed `content`/`totalElements`
-response shape and zero-based `pageNumero`. An empty page ends consumption even
-when the reported total is stale.
+The 58 curated operations overlap the catalogue; do not add the counts. The
+broader LYA applications expose more than MIA's supplied collection. A generated
+mapping means the SDK can construct an observed request. It does not establish
+that your credentials can call it or that the server accepts a particular payload.
 
 ## Use the wider observed API
 
-The generated surface is deliberately an advanced API. The operation ID, path
-and query slots are typed; incomplete DTOs remain `unknown`. Body encoding is
-explicit, including the many frontend calls that pass an opaque value to fetch.
+The generated API types operation IDs and parameter slots. Incomplete request
+and response models remain `unknown`. Supply a response schema when you have a
+contract to validate, as in this example:
 
 ```ts
 import { Schema } from "effect";
@@ -190,70 +315,85 @@ const readInternalProject = Observed.request(
 );
 ```
 
-Without the third argument, the result type is `unknown`. Supplying your own
-decoder validates the returned DTO; configure it to preserve extra fields if you
-need them. For calls with bodies, use `Body.json(...)`,
-`Body.text(..., "application/json")`, `Body.formData(...)` or `Body.none()` as
-appropriate for the recorded request. The SDK does not guess how an opaque body
-was encoded.
+Replace `PROJECT_NUMBER` with the internal project number. Without the third
+argument, the result type is `unknown`. Configure your decoder to preserve extra
+fields if you need them.
 
-`Observed.stream(id, input, decoder?)` supports the recorded NDJSON and raw byte
-stream routes. NDJSON decodes one record at a time; byte streams return
-`Uint8Array` chunks. Ending consumption closes the response. Entries with
-conflicting response modes, unresolved query construction or SSE framing remain
-catalogue-only; define an operation explicitly once the missing contract is
-established.
+For requests with bodies, choose the recorded encoding explicitly:
+`Body.json(...)`, `Body.text(..., "application/json")`, `Body.formData(...)`, or
+`Body.none()`. The SDK does not infer the encoding of an opaque body.
 
-`Observed.catalogue` contains every normalized variant, including excluded ones.
-The full [`spec/observed-endpoints.json`](spec/observed-endpoints.json) additionally
-records request expressions, observed fields, authentication markers, source
-hashes, offsets and execution limitations. `@mia/sdk/codes` exports observed
-literal code values grouped by category; those lists are not exhaustive server
-enums.
+`Observed.stream(id, input, decoder?)` supports newline-delimited JSON (NDJSON)
+and byte streams. NDJSON decodes one record at a time; byte streams emit
+`Uint8Array` chunks. Ending consumption closes the response. Variants with
+conflicting response modes, unresolved query construction, or server-sent event
+(SSE) framing remain catalogue-only.
 
-## Errors and extension fields
+`Observed.catalogue` includes every normalized variant. The full
+[observed endpoint specification](spec/observed-endpoints.json) records request
+expressions, authentication markers, source locations, and execution limits.
+`@mia/sdk/codes` exports observed code values by category; these are not
+exhaustive server enums.
+
+## Runtime behavior
+
+The SDK uses Effect HttpClient, Layers, tracing, and cancellation. Curated object
+schemas validate known fields and retain unknown extension fields. Dates and code
+values remain wire strings, and observed misspellings remain unchanged.
 
 Failures use separate tags: `MiaConfigurationError`, `MiaAuthenticationError`,
 `MiaTransportError`, `MiaHttpError`, `MiaEnvelopeError`, `MiaProtocolError`,
-`MiaSchemaError` and `MiaRequestError`.
+`MiaSchemaError`, and `MiaRequestError`. An HTTP 200 response with `success:false`
+fails for envelope APIs. Public-form responses retain their raw JSON/text format.
 
-An HTTP 200 response containing `success:false` is an application failure for
-enveloped platform calls. Public-form responses retain their separate raw
-JSON/text contract. Request and response schemas validate known fields while
-curated object models retain unknown extension fields. Dates and code values
-remain wire strings; misspelled source keys are preserved.
+Credentials, retained error payloads, and schema diagnostics use `Redacted`
+values. Keep full insurance records and unwrapped diagnostics out of general
+application logs. Operation spans identify the operation, service, and method.
 
-Error response payloads and schema diagnostics are held in `Redacted` values.
-Avoid logging full insurance records or unwrapping diagnostics into general
-application logs. Operation spans identify the operation, service and method.
+`Contracts.stream(search)` returns an Effect
+`Stream<Contract, MiaError, MiaClient>`. It requests pages as needed using
+`content`, `totalElements`, and zero-based `pageNumero`. An empty page ends
+consumption even when the reported total is stale.
+
+## Develop and verify
+
+After installing dependencies, run the repository checks:
+
+```sh
+pnpm generate:check
+pnpm check
+pnpm test
+pnpm build
+node scripts/generate-curated-reference.mjs --check
+```
+
+The local suite covers request encodings, sanitized saved responses, extension
+fields, identifiers, pagination, authentication, errors, streaming, and
+cancellation. Tests use mocks and synthetic credentials. The CI workflow is
+configured to run these checks without insurance credentials. See the
+[recorded local validation results](docs/VALIDATION.md).
+
+Before running a product workflow against a tenant, validate its service URLs,
+authentication scopes, required payloads, and completion states in an authorized
+test environment. The SDK tests do not establish carrier binding, policy
+issuance, or the contents of the generated setup sheets.
 
 ## Evidence and regeneration
 
-- [`docs/REVERSE_ENGINEERING.md`](docs/REVERSE_ENGINEERING.md): workflow findings,
-  identifier semantics, policy references and payroll-sheet evidence.
-- [`docs/EXTRACTION.md`](docs/EXTRACTION.md): extraction scope, source acquisition,
-  static parsing and reproduction commands.
-- [`spec/source-manifest.json`](spec/source-manifest.json): source URLs and hashes.
-- [`spec/unresolved-calls.json`](spec/unresolved-calls.json): unresolved expressions
-  and why no request mapping was invented.
-- [`spec/frontend-metadata/`](spec/frontend-metadata/): structured frontend
-  templates, enums, discriminator and validation evidence.
-- [`docs/adr/`](docs/adr/): architecture and protocol decisions.
+Use these documents to inspect or extend the recovered interfaces:
 
-`pnpm generate` regenerates SDK catalogue/code constants from the checked-in
-evidence. A source re-extraction is a separate explicit step. Downloaded
-application bundles and the original uploaded Postman collection are not part of
-this repository.
+- [Reverse-engineering findings](docs/REVERSE_ENGINEERING.md): workflow behavior,
+  identifiers, policy references, and setup-sheet evidence.
+- [Extraction guide](docs/EXTRACTION.md): source acquisition, parsing, and
+  reproduction commands.
+- [Source manifest](spec/source-manifest.json): public source URLs and hashes.
+- [Unresolved calls](spec/unresolved-calls.json): expressions that could not be
+  mapped and the reasons.
+- [Frontend metadata](spec/frontend-metadata/): templates, codes, discriminators,
+  and UI validation evidence.
+- [Architecture decisions](docs/adr/): operation design, evidence, and retries.
 
-## Validation status
-
-The local suite checks request wire shapes, full sanitized saved-response
-round-trips, unknown-field preservation, identifiers, pagination, authentication,
-typed error handling, streams and cancellation. Tests use mocks and synthetic
-credentials. CI repeats the generation check, TypeScript check, tests and build
-without insurance credentials.
-
-Before using write operations against a live tenant, establish the exact service
-URLs, authentication scopes, authoritative payload schemas and product workflow
-requirements in an authorized test environment. The initial PR is a draft so
-those integration findings can be reviewed separately from the SDK mechanics.
+`pnpm generate` regenerates catalogue and code constants from the checked-in
+evidence. Re-extracting source is a separate step described in the extraction
+guide. The repository excludes downloaded application bundles and the original
+uploaded Postman collection.
